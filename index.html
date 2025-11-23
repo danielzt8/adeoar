@@ -5,67 +5,215 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>ADEOAR</title>
     <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <style>
+         .hero-donate {
+            background: linear-gradient(135deg, #4b6cb7 0%, #182848 100%);
+            color: white;
+            padding: 4rem 2rem;
+            border-radius: 10px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+            margin: 0rem 0rem;
+            max-width: 1400px;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        .hero-donate-content {
+            max-width: 800px;
+            margin: 0 auto;
+            text-align: center;
+        }
+
+        .hero-donate-title {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+            font-weight: 700;
+            line-height: 1.2;
+        }
+
+        .hero-donate-subtitle {
+            font-size: 1.2rem;
+            margin-bottom: 2rem;
+            line-height: 1.6;
+            opacity: 0.9;
+        }
+
+        .donation-options {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 1rem;
+            margin-bottom: 2rem;
+        }
+
+        .donation-amount {
+            background: rgba(255, 255, 255, 0.1);
+            border: 2px solid rgba(255, 255, 255, 0.3);
+            color: white;
+            padding: 0.8rem 1.5rem;
+            border-radius: 50px;
+            font-size: 1rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .donation-amount:hover {
+            background: rgba(255, 255, 255, 0.2);
+            transform: translateY(-2px);
+        }
+
+        .donation-amount:focus {
+            outline: none;
+            background: white;
+            color: #4b6cb7;
+        }
+
+        .donate-button {
+            background: #ff6b6b;
+            color: white;
+            border: none;
+            padding: 1rem 3rem;
+            font-size: 1.1rem;
+            font-weight: 600;
+            border-radius: 50px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 15px rgba(255, 107, 107, 0.4);
+            margin-bottom: 2rem;
+        }
+
+        .donate-button:hover {
+            background: #ff5252;
+            transform: translateY(-3px);
+            box-shadow: 0 6px 20px rgba(255, 107, 107, 0.6);
+        }
+
+        .trust-badges {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 1rem;
+        }
+
+        .trust-badge {
+            background: rgba(255, 255, 255, 0.1);
+            padding: 0.5rem 1.2rem;
+            border-radius: 50px;
+            font-size: 0.9rem;
+            font-weight: 500;
+        }
+
+        @media (max-width: 768px) {
+            .hero-donate {
+                padding: 3rem 1.5rem;
+            }
+            
+            .hero-donate-title {
+                font-size: 2rem;
+            }
+            
+            .hero-donate-subtitle {
+                font-size: 1.1rem;
+            }
+            
+            .donation-amount {
+                padding: 0.7rem 1.2rem;
+                font-size: 0.9rem;
+            }
+        }
+    </style>
 </head>
 <body>
-<!-- Header Section -->
-    <header class="bg-white text-gray-800">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-10">
-            <div class="flex items-center justify-between">
-                <!-- Logo Section -->
-                <div class="flex-shrink-0">
-                    <a href="#" class="text-2xl font-bold">
-                        <img src="https://armada.mil.do/adeoar/wp-content/themes/ADEOAR/img/adeoard.png" alt="Logo" class="h-20 w-auto inline-block" /> 
-                    </a>
-                </div>
-                <!-- Barra de búsqueda -->
-<form class="mx-4 flex-1 max-w-md hidden md:flex" role="search">
-    <input 
-        type="search" 
-        placeholder="Buscar..." 
-        class="w-full px-4 py-2 border border-gray-300 rounded-l-full focus:outline-none focus:ring-2 focus:ring-yellow-400"
-    />
-    <button 
-        type="submit" 
-        class="bg-blue-900 hover:bg-blue-700 text-white px-4 py-2 rounded-r-full transition-all"
-    >
-        Buscar
-    </button>
-</form>
+<!-- header -->
+<header class="bg-white shadow-sm">
+        <div class="container mx-auto px-4 py-4">
 
-                <!-- Navigation Menu -->
-                <nav class="hidden md:flex space-x-10 text-sm">
-                    <a href="#" class="hover:text-gray-300 transition-all">Quienes somos</a>
-                    <a href="#services" class="hover:text-gray-300 transition-all">Consultas</a>
-                    <a href="#faq" class="hover:text-gray-300 transition-all">Calendario de eventos</a>
-                    <a href="#blog" class="hover:text-gray-300 transition-all">Avisos</a>
-                </nav>
-
-                <!-- Call-to-Action Button -->
-                <div class="hidden md:block">
-                    <a href="#contact" class="bg-blue-900 ml-4 hover:bg-blue-700 text-white py-2 px-6 rounded-full text-lg transition-all">
-                        Contacto
-                    </a>
-                </div>
-
-                <!-- Mobile Menu Button (for smaller screens) -->
-                <div class="md:hidden flex items-center">
-                    <button id="menu-button" class="text-blue-900 focus:outline-none">
-                        <svg class="h-6 w-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
-                        </svg>
-                    </button>
+            <div class="flex justify-center md:hidden mb-4">
+                <div class="flex flex-col items-center space-y-1">
+                     <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/2/26/Coat_of_arms_of_the_Dominican_Republic.svg/1200px-Coat_of_arms_of_the_Dominican_Republic.svg.png" alt="Escudo República Dominicana" class="h-10 w-auto">
+                     <span class="font-serif italic text-gray-700">República Dominicana</span>
                 </div>
             </div>
 
-            <!-- Mobile Navigation Menu -->
-            <div id="mobile-menu" class="md:hidden mt-5 hidden space-y-4">
-                <a href="#" class="block text-lg hover:text-gray-300 transition-all">Home</a>
-                <a href="#services" class="block text-lg hover:text-gray-300 transition-all">Services</a>
-                <a href="#about" class="block text-lg hover:text-gray-300 transition-all">About Us</a>
-                <a href="#contact" class="block text-lg hover:text-gray-300 transition-all">Contact</a>
+            <div class="flex flex-col md:flex-row md:justify-between md:items-center">
+
+                <div class="flex flex-col items-center md:flex-row md:items-center md:space-x-4">
+                    <img src="https://armada.mil.do/adeoar/wp-content/themes/ADEOAR/img/adeoard.png" alt="Logo Academia Naval" class="h-20 w-auto">
+                    <!-- <div class="text-center md:text-left mt-2 md:mt-0">
+                        <h1 class="text-2xl font-bold text-blue-900">Academia Naval</h1>
+                        <p class="text-lg font-semibold text-blue-900">César Augusto de Windt Lavandier</p>
+                        <p class="text-sm text-gray-600">ARMADA DE REPÚBLICA DOMINICANA</p>
+                    </div> -->
+                </div>
+
+                <div class="hidden md:flex flex-col items-end space-y-3">
+                    
+                    <div class="flex items-center space-x-2">
+                         <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/2/26/Coat_of_arms_of_the_Dominican_Republic.svg/1200px-Coat_of_arms_of_the_Dominican_Republic.svg.png" alt="Escudo República Dominicana" class="h-10 w-auto">
+                         <span class="font-serif italic text-gray-700">República Dominicana</span>
+                    </div>
+
+                    <div class="flex items-center">
+                        <input type="text" placeholder="Búsqueda" class="border border-r-0 border-gray-300 px-3 py-1 focus:outline-none focus:ring-1 focus:ring-blue-500">
+                        <button class="bg-blue-800 text-white p-2 hover:bg-blue-900">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
+                                <path fill-rule="evenodd" d="M8 4a4 4 0 100 8 4 4 0 000-8zM2 8a6 6 0 1110.89 3.476l4.817 4.817a1 1 0 01-1.414 1.414l-4.816-4.816A6 6 0 012 8z" clip-rule="evenodd" />
+                            </svg>
+                        </button>
+                    </div>
+
+                    <div class="text-sm text-gray-600 space-x-4">
+                        <a href="#" class="hover:underline">Inicio</a>
+                        <span>|</span>
+                        <a href="#" class="hover:underline">Mapa del sitio</a>
+                        <span>|</span>
+                        <a href="#" class="hover:underline">Contactos</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="md:hidden mt-6 border border-gray-300 rounded overflow-hidden flex items-stretch shadow-md">
+                <input type="text" placeholder="Búsqueda" class="flex-grow px-3 py-3 text-lg focus:outline-none" style="border-radius: 0; border: none;">
+                
+                <button id="mobile-menu-button" class="bg-blue-900 text-white p-3 hover:bg-blue-800 w-16 flex items-center justify-center">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M4 6h16M4 12h16m-7 6h7" />
+                    </svg>
+                </button>
             </div>
         </div>
-    </header>  
+        
+        <nav id="mobile-menu" class="hidden md:hidden bg-blue-800 border-t border-red-600">
+            <ul class="flex flex-col py-2">
+                <li><a href="#" class="block bg-red-600 text-white font-semibold px-4 py-2 hover:bg-red-700">Inicio</a></li>
+                <li><a href="#" class="block text-white font-semibold px-4 py-2 hover:bg-blue-700">Sobre nosotros</a></li>
+                <li><a href="#" class="block text-white font-semibold px-4 py-2 hover:bg-blue-700">Servicios</a></li>
+                <li><a href="#" class="block text-white font-semibold px-4 py-2 hover:bg-blue-700">Transparencia</a></li>
+                <li><a href="#" class="block text-white font-semibold px-4 py-2 hover:bg-blue-700">Noticias</a></li>
+                <li><a href="#" class="block text-white font-semibold px-4 py-2 hover:bg-blue-700">Aula Virtual</a></li>
+                <li><a href="#" class="block text-white font-semibold px-4 py-2 hover:bg-blue-700">Reglamentos</a></li>
+                <li><a href="#" class="block text-white font-semibold px-4 py-2 hover:bg-blue-700">Contactos</a></li>
+            </ul>
+        </nav>
+
+        <nav class="hidden md:block bg-blue-900">
+            <div class="container mx-auto">
+                <ul class="flex">
+                    <li><a href="#" class="block bg-red-600 text-white font-semibold px-5 py-3">Inicio</a></li>
+                    <li><a href="#" class="flex items-center space-x-1 text-white font-semibold px-5 py-3 hover:bg-blue-800"><span>Sobre nosotros</span><svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" clip-rule="evenodd" /></svg></a></li>
+                    <li><a href="#" class="flex items-center space-x-1 text-white font-semibold px-5 py-3 hover:bg-blue-800"><span>Servicios</span><svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" clip-rule="evenodd" /></svg></a></li>
+                    <li><a href="#" class="block text-white font-semibold px-5 py-3 hover:bg-blue-800">Transparencia</a></li>
+                    <li><a href="#" class="block text-white font-semibold px-5 py-3 hover:bg-blue-800">Noticias</a></li>
+                    <li><a href="#" class="block text-white font-semibold px-5 py-3 hover:bg-blue-800">Aula Virtual</a></li>
+                    <li><a href="#" class="flex items-center space-x-1 text-white font-semibold px-5 py-3 hover:bg-blue-800"><span>Reglamentos</span><svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" clip-rule="evenodd" /></svg></a></li>
+                    <li><a href="#" class="block text-white font-semibold px-5 py-3 hover:bg-blue-800">Contactos</a></li>
+                </ul>
+            </div>
+        </nav>
+    </header>
+
+
+<!-- fin header -->
 <!-- slider -->
     <section class="bg-gray-100">
     <div x-data="{ activeSlide: 0, slides: 3, timer: null }" 
@@ -289,92 +437,8 @@
 </section>
 <!-- end card section -->
 
-
-<section>
-    <div class="w-full dark:bg-gray-800">
-
-    <div class="mx-auto max-w-7xl px-6 lg:px-8 pt-8">
-        <!-- <div class="mx-auto max-w-2xl text-center">
-            <h2 class="text-3xl font-bold tracking-tight text-gray-900 dark:text-white sm:text-4xl">From The Blog</h2>
-            <p class="mt-2 text-lg leading-8 text-gray-600 dark:text-gray-300">
-                Dive into the latest in technology with our insightful blog posts.
-            </p>
-        </div> -->
-        <div
-            class="mx-auto mt-8 grid max-w-2xl auto-rows-fr grid-cols-1 gap-8 sm:mt-12 lg:mx-0 lg:max-w-none lg:grid-cols-3 ">
-            <!-- First blog post -->
-            <article
-                class="relative isolate flex flex-col justify-end overflow-hidden rounded-2xl bg-gray-900 dark:bg-gray-700 px-8 py-8 pb-8 pt-80 sm:pt-48 lg:pt-80">
-                <img src="https://images.unsplash.com/photo-1677442135703-1787eea5ce01?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w0NzEyNjZ8MHwxfHNlYXJjaHw1fHxhaXxlbnwwfDB8fHwxNzEyNzUzMTQ4fDA&ixlib=rb-4.0.3&q=80&w=1080" alt="" class="absolute inset-0 -z-10 h-full w-full object-cover">
-                <div class="absolute inset-0 -z-10 bg-gradient-to-t from-gray-900 via-gray-900/40"></div>
-                <div class="absolute inset-0 -z-10 rounded-2xl ring-1 ring-inset ring-gray-900/10"></div>
-                <div class="flex flex-wrap items-center gap-y-1 overflow-hidden text-sm leading-6 text-gray-300"><time
-                        datetime="2023-10-11" class="mr-8">Oct 11, 2023</time>
-                    <div class="-ml-4 flex items-center gap-x-4"><svg viewBox="0 0 2 2"
-                            class="-ml-0.5 h-0.5 w-0.5 flex-none fill-white/50">
-                            <circle cx="1" cy="1" r="1"></circle>
-                        </svg>
-                        <div class="flex gap-x-2.5">
-                            <img src="https://randomuser.me/api/portraits/men/2.jpg" alt="" class="h-6 w-6 flex-none rounded-full bg-white/10">John
-                        </div>
-                    </div>
-                </div>
-                <h3 class="mt-3 text-lg font-semibold leading-6 text-white">
-                    <a href="/tech-blog/post1"><span class="absolute inset-0"></span>Galería de expresidentes</a>
-                </h3>
-            </article>
-            <!-- Second blog post -->
-            <article
-                class="relative isolate flex flex-col justify-end overflow-hidden rounded-2xl bg-gray-900 dark:bg-gray-700 px-8 py-8 pb-8 pt-80 sm:pt-48 lg:pt-80">
-                <img src="https://images.unsplash.com/photo-1639322537228-f710d846310a?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w0NzEyNjZ8MHwxfHNlYXJjaHw1fHxibG9jayUyMGNoYWlufGVufDB8MHx8fDE3MTI3NTMxNjd8MA&ixlib=rb-4.0.3&q=80&w=1080" alt="" class="absolute inset-0 -z-10 h-full w-full object-cover">
-                <div class="absolute inset-0 -z-10 bg-gradient-to-t from-gray-900 via-gray-900/40"></div>
-                <div class="absolute inset-0 -z-10 rounded-2xl ring-1 ring-inset ring-gray-900/10"></div>
-                <div class="flex flex-wrap items-center gap-y-1 overflow-hidden text-sm leading-6 text-gray-300"><time
-                        datetime="2023-09-25" class="mr-8">Sept 25, 2023</time>
-                    <div class="-ml-4 flex items-center gap-x-4"><svg viewBox="0 0 2 2"
-                            class="-ml-0.5 h-0.5 w-0.5 flex-none fill-white/50">
-                            <circle cx="1" cy="1" r="1"></circle>
-                        </svg>
-                        <div class="flex gap-x-2.5">
-                            <img src="https://randomuser.me/api/portraits/women/2.jpg" alt="" class="h-6 w-6 flex-none rounded-full bg-white/10">Jane
-                        </div>
-                    </div>
-                </div>
-                <h3 class="mt-3 text-lg font-semibold leading-6 text-white">
-                    <a href="/tech-blog/post2"><span class="absolute inset-0"></span>Adeoar</a>
-                </h3>
-            </article>
-            <!-- Third blog post -->
-            <article
-                class="relative isolate flex flex-col justify-end overflow-hidden rounded-2xl bg-gray-900 dark:bg-gray-700 px-8 py-8 pb-8 pt-80 sm:pt-48 lg:pt-80">
-                <img src="https://images.unsplash.com/photo-1666112835156-c65bb806ac73?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w0NzEyNjZ8MHwxfHNlYXJjaHwxNXx8cXVhbnR1bSUyMGNvbXB1dGluZ3xlbnwwfDB8fHwxNzEyNzUzMTk2fDA&ixlib=rb-4.0.3&q=80&w=1080" alt="" class="absolute inset-0 -z-10 h-full w-full object-cover">
-                <div class="absolute inset-0 -z-10 bg-gradient-to-t from-gray-900 via-gray-900/40"></div>
-                <div class="absolute inset-0 -z-10 rounded-2xl ring-1 ring-inset ring-gray-900/10"></div>
-                <div class="flex flex-wrap items-center gap-y-1 overflow-hidden text-sm leading-6 text-gray-300"><time
-                        datetime="2023-09-24" class="mr-8">Sept 24, 2023</time>
-                    <div class="-ml-4 flex items-center gap-x-4"><svg viewBox="0 0 2 2"
-                            class="-ml-0.5 h-0.5 w-0.5 flex-none fill-white/50">
-                            <circle cx="1" cy="1" r="1"></circle>
-                        </svg>
-                        <div class="flex gap-x-2.5">
-                            <img src="https://armada.mil.do/adeoar/wp-content/uploads/2025/09/presidente.jpg" alt="" class="h-6 w-6 flex-none rounded-full bg-white/10">Michael
-                        </div>
-                    </div>
-                </div>
-                <h3 class="mt-3 text-lg font-semibold leading-6 text-white">
-                    <a href="/tech-blog/post3"><span class="absolute inset-0"></span>How Quantum Computing Will
-                        Revolutionize Data Security</a>
-                </h3>
-            </article>
-            <!-- More blog posts can be added similarly -->
-        </div>
-    </div>
-
-</div>
-</section>
-
-
-<section>
+<!-- noticias -->
+<section class="bg-gray-100">
     <div class="w-full min-h-screen flex flex-col items-center justify-center py-10">
   <span class="text-md md:text-lg font-bold text-[#117278] flex items-center gap-1"><ion-icon name="heart-outline"></ion-icon>Destacadas</span>
   <h2 class="text-4xl sm:text-5xl md:text-7xl text-center chelsea-market-regular font-bold text-[#117278] md:mb-16 mb-10">Noticias y actividades</h2>
@@ -481,6 +545,94 @@
 <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
 </section>
 
+<!-- fin noticias -->
+
+<!-- seccion de la galeria de expresidentes -->
+
+<section class="mb-10">
+    <div class="w-full dark:bg-gray-800">
+
+    <div class="mx-auto max-w-7xl px-6 lg:px-8 pt-8">
+        <!-- <div class="mx-auto max-w-2xl text-center">
+            <h2 class="text-3xl font-bold tracking-tight text-gray-900 dark:text-white sm:text-4xl">From The Blog</h2>
+            <p class="mt-2 text-lg leading-8 text-gray-600 dark:text-gray-300">
+                Dive into the latest in technology with our insightful blog posts.
+            </p>
+        </div> -->
+        <div
+            class="mx-auto mt-8 grid max-w-2xl auto-rows-fr grid-cols-1 gap-8 sm:mt-12 lg:mx-0 lg:max-w-none lg:grid-cols-3 ">
+            <!-- First blog post -->
+            <article
+                class="relative isolate flex flex-col justify-end overflow-hidden rounded-2xl bg-gray-900 dark:bg-gray-700 px-8 py-8 pb-8 pt-80 sm:pt-48 lg:pt-80">
+                <img src="https://images.unsplash.com/photo-1677442135703-1787eea5ce01?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w0NzEyNjZ8MHwxfHNlYXJjaHw1fHxhaXxlbnwwfDB8fHwxNzEyNzUzMTQ4fDA&ixlib=rb-4.0.3&q=80&w=1080" alt="" class="absolute inset-0 -z-10 h-full w-full object-cover">
+                <div class="absolute inset-0 -z-10 bg-gradient-to-t from-gray-900 via-gray-900/40"></div>
+                <div class="absolute inset-0 -z-10 rounded-2xl ring-1 ring-inset ring-gray-900/10"></div>
+                <div class="flex flex-wrap items-center gap-y-1 overflow-hidden text-sm leading-6 text-gray-300"><time
+                        datetime="2023-10-11" class="mr-8">Oct 11, 2023</time>
+                    <div class="-ml-4 flex items-center gap-x-4"><svg viewBox="0 0 2 2"
+                            class="-ml-0.5 h-0.5 w-0.5 flex-none fill-white/50">
+                            <circle cx="1" cy="1" r="1"></circle>
+                        </svg>
+                        <div class="flex gap-x-2.5">
+                            <img src="https://randomuser.me/api/portraits/men/2.jpg" alt="" class="h-6 w-6 flex-none rounded-full bg-white/10">John
+                        </div>
+                    </div>
+                </div>
+                <h3 class="mt-3 text-lg font-semibold leading-6 text-white">
+                    <a href="/tech-blog/post1"><span class="absolute inset-0"></span>Galería de expresidentes</a>
+                </h3>
+            </article>
+            <!-- Second blog post -->
+            <article
+                class="relative isolate flex flex-col justify-end overflow-hidden rounded-2xl bg-gray-900 dark:bg-gray-700 px-8 py-8 pb-8 pt-80 sm:pt-48 lg:pt-80">
+                <img src="https://images.unsplash.com/photo-1639322537228-f710d846310a?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w0NzEyNjZ8MHwxfHNlYXJjaHw1fHxibG9jayUyMGNoYWlufGVufDB8MHx8fDE3MTI3NTMxNjd8MA&ixlib=rb-4.0.3&q=80&w=1080" alt="" class="absolute inset-0 -z-10 h-full w-full object-cover">
+                <div class="absolute inset-0 -z-10 bg-gradient-to-t from-gray-900 via-gray-900/40"></div>
+                <div class="absolute inset-0 -z-10 rounded-2xl ring-1 ring-inset ring-gray-900/10"></div>
+                <div class="flex flex-wrap items-center gap-y-1 overflow-hidden text-sm leading-6 text-gray-300"><time
+                        datetime="2023-09-25" class="mr-8">Sept 25, 2023</time>
+                    <div class="-ml-4 flex items-center gap-x-4"><svg viewBox="0 0 2 2"
+                            class="-ml-0.5 h-0.5 w-0.5 flex-none fill-white/50">
+                            <circle cx="1" cy="1" r="1"></circle>
+                        </svg>
+                        <div class="flex gap-x-2.5">
+                            <img src="https://randomuser.me/api/portraits/women/2.jpg" alt="" class="h-6 w-6 flex-none rounded-full bg-white/10">Jane
+                        </div>
+                    </div>
+                </div>
+                <h3 class="mt-3 text-lg font-semibold leading-6 text-white">
+                    <a href="/tech-blog/post2"><span class="absolute inset-0"></span>Adeoar</a>
+                </h3>
+            </article>
+            <!-- Third blog post -->
+            <article
+                class="relative isolate flex flex-col justify-end overflow-hidden rounded-2xl bg-gray-900 dark:bg-gray-700 px-8 py-8 pb-8 pt-80 sm:pt-48 lg:pt-80">
+                <img src="https://images.unsplash.com/photo-1666112835156-c65bb806ac73?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w0NzEyNjZ8MHwxfHNlYXJjaHwxNXx8cXVhbnR1bSUyMGNvbXB1dGluZ3xlbnwwfDB8fHwxNzEyNzUzMTk2fDA&ixlib=rb-4.0.3&q=80&w=1080" alt="" class="absolute inset-0 -z-10 h-full w-full object-cover">
+                <div class="absolute inset-0 -z-10 bg-gradient-to-t from-gray-900 via-gray-900/40"></div>
+                <div class="absolute inset-0 -z-10 rounded-2xl ring-1 ring-inset ring-gray-900/10"></div>
+                <div class="flex flex-wrap items-center gap-y-1 overflow-hidden text-sm leading-6 text-gray-300"><time
+                        datetime="2023-09-24" class="mr-8">Sept 24, 2023</time>
+                    <div class="-ml-4 flex items-center gap-x-4"><svg viewBox="0 0 2 2"
+                            class="-ml-0.5 h-0.5 w-0.5 flex-none fill-white/50">
+                            <circle cx="1" cy="1" r="1"></circle>
+                        </svg>
+                        <div class="flex gap-x-2.5">
+                            <img src="https://armada.mil.do/adeoar/wp-content/uploads/2025/09/presidente.jpg" alt="" class="h-6 w-6 flex-none rounded-full bg-white/10">Michael
+                        </div>
+                    </div>
+                </div>
+                <h3 class="mt-3 text-lg font-semibold leading-6 text-white">
+                    <a href="/tech-blog/post3"><span class="absolute inset-0"></span>How Quantum Computing Will
+                        Revolutionize Data Security</a>
+                </h3>
+            </article>
+            <!-- More blog posts can be added similarly -->
+        </div>
+    </div>
+
+</div>
+</section>
+
+<!-- multimedia gallery section -->
 <section>
     <div class="bg-gray-100">
     <div class="container mx-auto px-4 py-8">
@@ -493,7 +645,7 @@
                     class="absolute inset-0 bg-black bg-opacity-60 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
                     <div class="absolute bottom-0 left-0 right-0 p-4">
                         <h3 class="text-2xl font-bold text-white">Explore Nature</h3>
-                        <p class="text-white">Discover the beauty of the natural world</p>
+                        <p class="text-white">Discover the beauty of the natural wordld</p>
                     </div>
                 </div>
             </div>
@@ -554,7 +706,7 @@
                     class="absolute inset-0 bg-black bg-opacity-60 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
                     <div class="absolute bottom-0 left-0 right-0 p-4">
                         <h4 class="text-xl font-bold text-white">Chess</h4>
-                    </div>
+                    </div>  
                 </div>
             </div>
             <div class="relative overflow-hidden rounded-2xl shadow-lg group">
@@ -579,6 +731,95 @@
     </div>
 </div>
 </section>
+
+<section class=" mx-auto w-full px-10 dark:bg-gray-800 dark:text-white mb-10">
+  <div class="flex items-center justify-center flex-col gap-y-2 py-5">
+    <h2 class="text-2xl md:text-3xl lg:text-4xl font-bold">Testimonios</h2>
+    <p class="text-lg font-medium text-slate-700/70 dark:text-gray-400">Descubre cómo nuestro servicio puede beneficiarte</p>
+  </div>
+  <div class="grid grid-cols-1 lg:grid-cols-5 gap-5 w-full">
+    <div
+      class="border p-7 rounded-xl bg-white dark:bg-gray-700 drop-shadow-md border-neutral-200/50 col-span-2 flex flex-col gap-y-10 justify-between">
+      <div class="flex flex-col gap-y-3.5">
+        <p class="font-bold text-xl">Brillante casa para alquilar</p>
+        <p class="font-medium text-slate-700/90 dark:text-gray-300">Todos los equipos de eFounders se han trasladado a Cycle para todo
+          lo relacionado con la gestión de productos y es realmente un cambio de juego.</p>
+      </div>
+      <div class="flex flex-col">
+        <img src="https://randomuser.me/api/portraits/women/54.jpg" alt="Jane Cooper" class="h-10 w-10">
+        <p class="pt-2 text-sm font-semibold">Jane Cooper</p>
+        <p class="text-sm font-medium text-slate-700/70 dark:text-gray-400">CEO at ABC Corporation</p>
+      </div>
+    </div>
+    <div
+      class="border p-7 rounded-xl bg-white dark:bg-gray-700 drop-shadow-md border-neutral-200/50 col-span-3 flex flex-col gap-y-10 justify-between">
+      <div class="flex flex-col gap-y-3.5">
+        <p class="font-bold text-xl">Excelente soporte al cliente</p>
+        <p class="font-medium text-slate-700/90 dark:text-gray-300">El equipo de soporte al cliente de nuestro servicio es
+          increíblemente receptivo y servicial. Fueron más allá para ayudarme con mi problema.</p>
+      </div>
+      <div class="flex flex-col">
+        <img src="https://randomuser.me/api/portraits/women/30.jpg" alt="John Doe" class="h-10 w-10">
+        <p class="pt-2 text-sm font-semibold">Emily Smith</p>
+        <p class="text-sm font-medium text-slate-700/70 dark:text-gray-400">Marketing Manager at ABC Company</p>
+      </div>
+    </div>
+    <div
+      class="border p-7 rounded-xl bg-white dark:bg-gray-700 drop-shadow-md border-neutral-200/50 col-span-3 flex flex-col gap-y-10 justify-between">
+      <div class="flex flex-col gap-y-3.5">
+        <p class="font-bold text-xl">Proceso de integración sin problemas</p>
+        <p class="font-medium text-slate-700/90 dark:text-gray-300">Integrar nuestros sistemas con nuestro servicio fue sencillo
+          y sin complicaciones. El equipo de soporte nos guió en cada paso del proceso.</p>
+      </div>
+      <div class="flex flex-col">
+        <img src="https://randomuser.me/api/portraits/women/90.jpg" alt="Jane Doe" class="h-10 w-10">
+        <p class="pt-2 text-sm font-semibold">Sarah Brown</p>
+        <p class="text-sm font-medium text-slate-700/70 dark:text-gray-400">CTO at XYZ Corporation</p>
+      </div>
+    </div>
+    <div
+      class="border p-7 rounded-xl bg-white dark:bg-gray-700 drop-shadow-md border-neutral-200/50 col-span-2 flex flex-col gap-y-10 justify-between">
+      <div class="flex flex-col gap-y-3.5">
+        <p class="font-bold text-xl">Tiempo de actividad confiable del servicio</p>
+        <p class="font-medium text-slate-700/90 dark:text-gray-300">Nuestro servicio ha mantenido consistentemente un alto tiempo de actividad,
+          asegurando que nuestras operaciones funcionen sin problemas y sin interrupciones.</p>
+      </div>
+      <div class="flex flex-col">
+        <img src="https://randomuser.me/api/portraits/men/90.jpg" alt="Ash Doe" class="h-10 w-10">
+        <p class="pt-2 text-sm font-semibold">James White</p>
+        <p class="text-sm font-medium text-slate-700/70 dark:text-gray-400">COO at XYZ Corporation</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section>
+ <div class="hero-donate">
+        <div class="hero-donate-content">
+            <h1 class="hero-donate-title">Puedes hacer una diferencia hoy</h1>
+            <p class="hero-donate-subtitle">
+                Tu donación nos ayuda a continuar nuestra misión y crear un cambio positivo en el mundo.
+            </p>
+            
+            <div class="donation-options">
+                <button class="donation-amount">$10</button>
+                <button class="donation-amount">$25</button>
+                <button class="donation-amount">$50</button>
+                <button class="donation-amount">$100</button>
+                <button class="donation-amount">Otro</button>
+            </div>
+            
+            <button class="donate-button">Donar Ahora</button>
+            
+            <div class="trust-badges">
+                <span class="trust-badge">Pago Seguro</span>
+                <span class="trust-badge">Deducible de Impuestos</span>
+                <span class="trust-badge">100% Transparente</span>
+            </div>
+        </div>
+    </div>
+</section>
+
 
 <!-- Enlaces de interes -->
 <section class="bg-gray-50 py-10">
@@ -755,8 +996,23 @@
 </div>
     </footer>
 
+<script>
+        document.addEventListener('DOMContentLoaded', () => {
+            // 1. Obtener el botón de hamburguesa por su ID
+            const button = document.getElementById('mobile-menu-button');
+            
+            // 2. Obtener el contenedor del menú por su ID
+            const menu = document.getElementById('mobile-menu');
 
+            // 3. Agregar un "escuchador" de eventos al botón
+            button.addEventListener('click', () => {
+                // 4. Alternar la clase 'hidden' en el menú para mostrarlo u ocultarlo
+                menu.classList.toggle('hidden');
+            });
+        });
+    </script>
 
+<!-- carrousel del principio -->
     <script>
         // Mobile Menu Toggle
         const menuButton = document.getElementById('menu-button');
