@@ -131,6 +131,24 @@
 
         fade-in { animation: fadeIn 0.3s ease-in-out; }
         @keyframes fadeIn { from { opacity: 0; transform: translateY(5px); } to { opacity: 1; transform: translateY(0); } }
+/* el siguiente codigo es para el scroll reveal */
+
+
+/* Clase inicial: oculto y desplazado hacia abajo */
+.reveal {
+    position: relative;
+    transform: translateY(150px);
+    opacity: 0;
+    transition: all 1s ease;
+}
+
+/* Clase activa: visible y en su posición original */
+.reveal.active {
+    transform: translateY(0);
+    opacity: 1;
+}
+
+/* fin del scroll reveal */
     </style>
 </head>
 <body>
@@ -356,9 +374,9 @@
 <!-- fin de carousel de servicios -->
 
 <!-- card section -->
-<section>
+<section">
    <div class="relative overflow-hidden  pt-16 pb-32 space-y-24">
-    <div class="relative">
+    <div class="relative reveal">
         <div class="lg:mx-auto lg:grid lg:max-w-7xl lg:grid-flow-col-dense lg:grid-cols-2 lg:gap-24 lg:px-8 ">
             <div class="mx-auto max-w-xl px-6 lg:mx-0 lg:max-w-none lg:py-16 lg:px-0 ">
 
@@ -403,7 +421,7 @@
 
 
 
-    <div class="relative">
+    <div class="relative reveal">
         <div class="lg:mx-auto lg:grid lg:max-w-7xl lg:grid-flow-col-dense lg:grid-cols-2 lg:gap-24 lg:px-8 ">
             <div class="mx-auto max-w-xl px-6 lg:mx-0 lg:max-w-none lg:py-16 lg:px-0 lg:col-start-2">
                 <div>
@@ -446,7 +464,7 @@
 
 
 
-    <div class="relative">
+    <div class="relative reveal">
         <div class="lg:mx-auto lg:grid lg:max-w-7xl lg:grid-flow-col-dense lg:grid-cols-2 lg:gap-24 lg:px-8 ">
             <div class="mx-auto max-w-xl px-6 lg:mx-0 lg:max-w-none lg:py-16 lg:px-0 ">
                 <div>
@@ -489,7 +507,7 @@
     </div>
 
 
-   <div class="relative">
+   <div class="relative reveal">
         <div class="lg:mx-auto lg:grid lg:max-w-7xl lg:grid-flow-col-dense lg:grid-cols-2 lg:gap-24 lg:px-8 ">
             <div class="mx-auto max-w-xl px-6 lg:mx-0 lg:max-w-none lg:py-16 lg:px-0 lg:col-start-2">
                 <div>
@@ -536,7 +554,7 @@
 
 
 <!-- noticias -->
-<section class="py-16 md:py-24 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto font-sans-body">
+<section class="py-16 md:py-24 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto font-sans-body reveal">
     
     <div class="text-center mb-16 space-y-2">
         <span class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-teal-100 text-teal-800 text-sm font-bold tracking-wide uppercase">
@@ -652,7 +670,7 @@
 
 
 <!-- multimedia gallery section -->
-<section>
+<section class="reveal">
     <div class="bg-gray-100">
     <div class="container mx-auto px-4 py-8">
         <h1 class="text-4xl font-bold text-center mb-8">Galería multimedia</h1>
@@ -751,7 +769,7 @@
 </div>
 </section>
 
-<section class=" mx-auto w-full px-10 dark:bg-gray-800  dark:text-white mb-10 mt-10 p-10">
+<section class=" mx-auto w-full px-10 dark:bg-gray-800  dark:text-white mb-10 mt-10 p-10 reveal">
   <div class="flex items-center justify-center flex-col gap-y-2 py-5">
     <h2 class="text-2xl md:text-3xl lg:text-4xl font-bold">Testimonios</h2>
     <p class="text-lg font-medium text-slate-700/70 dark:text-gray-400">Descubre cómo nuestro servicio puede beneficiarte</p>
@@ -812,155 +830,64 @@
   </div>
 </section>
 
-<section class="py-20 px-4 md:px-8">
-    <div class="max-w-5xl mx-auto">
-        
-        <div class="text-center mb-12">
-            <span class="text-blue-600 font-bold tracking-wider uppercase text-sm">Tu apoyo cuenta</span>
-            <h2 class="text-4xl md:text-5xl font-serif-display text-gray-900 mt-2 mb-4">Impulsa nuestra <span class="text-blue-900 italic">Misión</span></h2>
-            <p class="text-gray-500 max-w-2xl mx-auto">Tu contribución nos ayuda a seguir brindando talleres de arte, seminarios educativos y recursos para nuestra comunidad.</p>
+
+<section class="py-20 bg-white reveal">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    
+    <h2 class="text-center text-2xl font-bold text-gray-800 mb-12 uppercase tracking-wider">
+      Patrocinadores Oficiales
+    </h2>
+
+    <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-y-12 gap-x-8 justify-items-center">
+
+      <a href="#" class="group flex flex-col items-center transition-transform duration-300 hover:scale-105">
+        <div class="h-12 w-12 text-gray-400 transition-colors duration-300 group-hover:text-[#181717]">
+            <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 24 24"><path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/></svg>
         </div>
+        <span class="mt-3 text-sm font-medium text-gray-500 transition-colors duration-300 group-hover:text-gray-900">GitHub</span>
+      </a>
 
-        <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
-            
-            <div class="lg:col-span-7 bg-white rounded-3xl shadow-xl p-8 md:p-10 border border-gray-100 relative overflow-hidden">
-                <div class="absolute top-0 left-0 w-full h-2 bg-gradient-to-r from-blue-900 to-blue-500"></div>
-                
-                <h3 class="text-2xl font-serif-display text-gray-800 mb-6">Selecciona un monto</h3>
-                
-                <div class="grid grid-cols-3 gap-4 mb-6">
-                    <button onclick="selectAmount(this, 10)" class="donation-btn py-4 rounded-xl border-2 border-gray-200 text-gray-600 font-bold text-xl hover:border-blue-600 hover:text-blue-600 transition-all focus:outline-none bg-white">
-                        $10
-                    </button>
-                    <button onclick="selectAmount(this, 25)" class="donation-btn py-4 rounded-xl border-2 border-blue-900 bg-blue-900 text-white font-bold text-xl transition-all focus:outline-none shadow-lg transform scale-105 ring-2 ring-blue-300">
-                        $25
-                    </button>
-                    <button onclick="selectAmount(this, 50)" class="donation-btn py-4 rounded-xl border-2 border-gray-200 text-gray-600 font-bold text-xl hover:border-blue-600 hover:text-blue-600 transition-all focus:outline-none bg-white">
-                        $50
-                    </button>
-                </div>
-
-                <div class="mb-8">
-                    <label class="block text-sm font-semibold text-gray-500 mb-2">O ingresa tu propio monto</label>
-                    <div class="relative group">
-                        <div class="absolute inset-y-0 left-0 pl-4 flex items-center pointer-events-none">
-                            <span class="text-gray-400 text-lg font-bold group-focus-within:text-blue-600">$</span>
-                        </div>
-                        <input type="number" id="custom-amount" placeholder="0.00" onfocus="clearButtons()"
-                            class="w-full pl-10 pr-4 py-4 rounded-xl bg-gray-50 border-2 border-gray-200 text-gray-800 font-bold text-lg focus:outline-none focus:border-blue-600 focus:bg-white focus:ring-4 focus:ring-blue-600/10 transition-all">
-                    </div>
-                </div>
-
-                <button class="w-full bg-blue-900 hover:bg-blue-800 text-white font-bold py-4 rounded-xl shadow-lg hover:shadow-xl hover:-translate-y-1 transition-all duration-300 flex items-center justify-center gap-2 text-lg">
-                    <span>Proceder con la Donación</span>
-                    <ion-icon name="heart" class="text-red-400"></ion-icon>
-                </button>
-                
-                <p class="text-xs text-center text-gray-400 mt-4 flex items-center justify-center gap-1">
-                    <ion-icon name="lock-closed-outline"></ion-icon> Transacción segura encriptada
-                </p>
-            </div>
-
-            <div class="lg:col-span-5 space-y-6">
-                
-                <div class="bg-white rounded-2xl shadow-lg p-6 border border-gray-100 relative group">
-                    <div class="flex items-center gap-3 mb-4">
-                        <div class="w-10 h-10 bg-blue-50 rounded-full flex items-center justify-center text-blue-900">
-                            <ion-icon name="business-outline" class="text-xl"></ion-icon>
-                        </div>
-                        <h4 class="font-bold text-gray-800">Transferencia Bancaria</h4>
-                    </div>
-                    
-                    <div class="bg-gray-50 rounded-xl p-4 border border-gray-200 space-y-3">
-                        <div>
-                            <p class="text-xs text-gray-500 uppercase font-bold">Banco</p>
-                            <p class="text-gray-800 font-medium">Banco Popular Dominicano</p>
-                        </div>
-                        <div class="relative">
-                            <p class="text-xs text-gray-500 uppercase font-bold">No. de Cuenta</p>
-                            <div class="flex items-center justify-between">
-                                <p class="text-gray-800 font-mono text-lg font-bold tracking-wide" id="bank-account">123-456789-0</p>
-                                <button onclick="copyToClipboard('bank-account')" class="text-blue-600 hover:text-blue-800 text-sm font-semibold flex items-center gap-1 bg-white px-2 py-1 rounded shadow-sm hover:shadow">
-                                    <ion-icon name="copy-outline"></ion-icon> Copiar
-                                </button>
-                            </div>
-                        </div>
-                        <div>
-                            <p class="text-xs text-gray-500 uppercase font-bold">Nombre</p>
-                            <p class="text-gray-800 font-medium">Fundación Adeoar</p>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- <div class="bg-[#0F172A] rounded-2xl shadow-lg p-6 text-white relative overflow-hidden group">
-                    <ion-icon name="logo-bitcoin" class="absolute -right-4 -bottom-4 text-9xl text-white opacity-5 rotate-12"></ion-icon>
-                    
-                    <div class="flex items-center gap-3 mb-4 relative z-10">
-                        <div class="w-10 h-10 bg-orange-500 rounded-full flex items-center justify-center text-white">
-                            <ion-icon name="logo-bitcoin" class="text-xl"></ion-icon>
-                        </div>
-                        <h4 class="font-bold">Donar con Bitcoin</h4>
-                    </div>
-
-                    <div class="flex gap-4 relative z-10">
-                        <div class="w-24 h-24 bg-white rounded-lg p-1 flex-shrink-0">
-                            <img src="https://api.qrserver.com/v1/create-qr-code/?size=150x150&data=1A1zP1eP5QGefi2DMPTfTL5SLmv7DivfNa" alt="BTC QR" class="w-full h-full object-contain">
-                        </div>
-                        
-                        <div class="flex flex-col justify-center w-full overflow-hidden">
-                            <p class="text-xs text-gray-400 uppercase font-bold mb-1">Wallet Address</p>
-                            <div class="bg-white/10 rounded-lg p-2 flex items-center justify-between border border-white/20">
-                                <p class="text-xs font-mono text-gray-200 truncate mr-2" id="btc-wallet">1A1zP1eP5QGefi2DMPTfTL5SLmv7DivfNa</p>
-                                <button onclick="copyToClipboard('btc-wallet')" class="text-orange-400 hover:text-orange-300 hover:bg-white/10 rounded p-1 transition-colors">
-                                    <ion-icon name="copy-outline"></ion-icon>
-                                </button>
-                            </div>
-                            <p class="text-[10px] text-gray-400 mt-2 italic">*Solo red Bitcoin (BTC)</p>
-                        </div>
-                    </div>
-                </div> -->
-
-            </div>
+      <a href="#" class="group flex flex-col items-center transition-transform duration-300 hover:scale-105">
+        <div class="h-12 w-12 text-gray-400 transition-colors duration-300 group-hover:text-[#635BFF]">
+            <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 24 24"><path d="M13.976 9.15c-2.172-.806-3.356-1.426-3.356-2.915 0-1.172 1.05-1.65 2.39-1.65 1.86 0 3.5.577 4.978 1.316l.837-3.414c-1.577-.667-3.523-1.086-5.576-1.086-4.966 0-7.856 2.56-7.856 6.868 0 3.104 2.098 5.191 6.226 6.659 2.617.93 3.738 1.615 3.738 2.966 0 1.13-1.047 1.827-2.69 1.827-2.235 0-4.201-.807-6.03-1.798l-.945 3.668c1.87.93 3.963 1.383 6.268 1.383 5.538 0 8.364-2.69 8.364-7.188 0-3.708-2.357-5.353-6.348-6.636z"/></svg>
         </div>
+        <span class="mt-3 text-sm font-medium text-gray-500 transition-colors duration-300 group-hover:text-gray-900">Stripe</span>
+      </a>
+
+      <a href="#" class="group flex flex-col items-center transition-transform duration-300 hover:scale-105">
+        <div class="h-12 w-12 text-gray-400 transition-colors duration-300 group-hover:text-[#FF4500]">
+             <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 24 24"><path d="M12 0A12 12 0 0 0 0 12a12 12 0 0 0 12 12 12 12 0 0 0 12-12A12 12 0 0 0 12 0zm5.01 4.744c.688 0 1.25.561 1.25 1.249a1.25 1.25 0 0 1-2.498.056l-2.597-.547-.8 3.747c1.824.07 3.48.632 4.674 1.488.308-.309.73-.491 1.207-.491.968 0 1.754.786 1.754 1.754 0 .716-.435 1.333-1.01 1.614a3.111 3.111 0 0 1 .042.52c0 2.694-3.13 4.87-7.004 4.87-3.874 0-7.004-2.176-7.004-4.87 0-.183.015-.366.043-.534A1.748 1.748 0 0 1 4.028 12c0-.968.786-1.754 1.754-1.754.463 0 .898.196 1.207.49 1.207-.883 2.878-1.43 4.744-1.487l.885-4.182a.342.342 0 0 1 .14-.197.35.35 0 0 1 .238-.042l2.906.617a1.214 1.214 0 0 1 1.108-.701zM9.25 12C8.561 12 8 12.562 8 13.25c0 .687.561 1.248 1.25 1.248.687 0 1.248-.561 1.248-1.249 0-.688-.561-1.249-1.249-1.249zm5.5 0c-.687 0-1.248.561-1.248 1.25 0 .687.561 1.248 1.249 1.248.688 0 1.249-.561 1.249-1.249 0-.687-.562-1.249-1.249-1.249zm-5.466 3.99a.327.327 0 0 0-.231.094.33.33 0 0 0 0 .463c.842.842 2.484.913 2.961.913.477 0 2.105-.056 2.961-.913a.361.361 0 0 0 .029-.463.33.33 0 0 0-.464 0c-.547.533-1.684.73-2.512.73-.828 0-1.979-.196-2.512-.73a.326.326 0 0 0-.232-.095z"/></svg>
+        </div>
+        <span class="mt-3 text-sm font-medium text-gray-500 transition-colors duration-300 group-hover:text-gray-900">Reddit</span>
+      </a>
+
+      <a href="#" class="group flex flex-col items-center transition-transform duration-300 hover:scale-105">
+        <div class="h-12 w-12 text-gray-400 transition-colors duration-300 group-hover:text-[#4285F4]">
+            <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 24 24"><path d="M12.48 10.92v3.28h7.84c-.24 1.84-.853 3.187-1.787 4.133-1.147 1.147-2.933 2.4-6.053 2.4-4.827 0-8.6-3.893-8.6-8.72s3.773-8.72 8.6-8.72c2.6 0 4.507 1.027 5.907 2.347l2.307-2.307C18.747 1.44 16.133 0 12.48 0 5.867 0 .307 5.387.307 12s5.56 12 12.173 12c3.573 0 6.267-1.173 8.373-3.36 2.16-2.16 2.84-5.213 2.84-7.667 0-.76-.053-1.467-.173-2.053H12.48z"/></svg>
+        </div>
+        <span class="mt-3 text-sm font-medium text-gray-500 transition-colors duration-300 group-hover:text-gray-900">Google</span>
+      </a>
+
+      <a href="#" class="group flex flex-col items-center transition-transform duration-300 hover:scale-105">
+        <div class="h-12 w-12 text-gray-400 transition-colors duration-300 group-hover:text-[#1DB954]">
+            <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 24 24"><path d="M12 0C5.4 0 0 5.4 0 12s5.4 12 12 12 12-5.4 12-12S18.66 0 12 0zm5.521 17.34c-.24.359-.66.48-1.021.24-2.82-1.74-6.36-2.101-10.561-1.141-.418.122-.837-.118-.96-.537-.118-.418.118-.837.537-.96 4.618-1.08 8.58-.66 11.76 1.321.36.18.48.6.24 1.02zm1.44-3.3c-.301.42-.841.6-1.262.3-3.239-1.98-8.159-2.58-11.939-1.38-.479.12-1.02-.12-1.199-.6-.12-.48.12-1.021.6-1.199 4.379-1.32 9.841-.6 13.5 1.679.42.24.6.841.3 1.262zm.12-3.36C15.18 8.46 8.82 8.16 5.1 9.301c-.6.179-1.2-.181-1.38-.721-.18-.601.18-1.2.72-1.381 4.26-1.26 11.4-1.02 15.66 1.44.539.3.719 1.02.419 1.56-.299.421-1.02.599-1.559.3z"/></svg>
+        </div>
+        <span class="mt-3 text-sm font-medium text-gray-500 transition-colors duration-300 group-hover:text-gray-900">Spotify</span>
+      </a>
+
+      <a href="#" class="group flex flex-col items-center transition-transform duration-300 hover:scale-105">
+        <div class="h-12 w-12 text-gray-400 transition-colors duration-300 group-hover:text-black">
+             <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 24 24"><path d="M12.152 6.896c-.948 0-2.415-1.078-3.96-1.04-2.04.027-3.91 1.183-4.961 3.014-2.117 3.675-.546 9.103 1.519 12.09 1.013 1.454 2.208 3.09 3.792 3.039 1.52-.065 2.09-.987 3.935-.987 1.831 0 2.35.987 3.96.948 1.637-.026 2.676-1.48 3.676-2.948 1.156-1.688 1.636-3.325 1.662-3.415-.039-.013-3.182-1.221-3.22-4.857-.026-3.04 2.48-4.494 2.597-4.559-1.429-2.09-3.623-2.324-4.39-2.376-2-.156-3.675 1.09-4.61 1.09zM15.53 3.83c.843-1.012 1.4-2.427 1.245-3.83-1.207.052-2.662.805-3.532 1.818-.78.896-1.454 2.338-1.273 3.714 1.338.104 2.715-.688 3.559-1.701z"/></svg>
+        </div>
+        <span class="mt-3 text-sm font-medium text-gray-500 transition-colors duration-300 group-hover:text-gray-900">Apple</span>
+      </a>
+
     </div>
-
-    <script>
-        // Lógica para selección de botones
-        function selectAmount(btn, amount) {
-            // Resetear todos los botones
-            document.querySelectorAll('.donation-btn').forEach(b => {
-                b.classList.remove('bg-blue-900', 'text-white', 'border-blue-900', 'shadow-lg', 'scale-105', 'ring-2', 'ring-blue-300');
-                b.classList.add('bg-white', 'text-gray-600', 'border-gray-200');
-            });
-            // Activar botón seleccionado
-            btn.classList.remove('bg-white', 'text-gray-600', 'border-gray-200');
-            btn.classList.add('bg-blue-900', 'text-white', 'border-blue-900', 'shadow-lg', 'scale-105', 'ring-2', 'ring-blue-300');
-            
-            // Limpiar input manual
-            document.getElementById('custom-amount').value = '';
-        }
-
-        // Limpiar botones al escribir manual
-        function clearButtons() {
-            document.querySelectorAll('.donation-btn').forEach(b => {
-                b.classList.remove('bg-blue-900', 'text-white', 'border-blue-900', 'shadow-lg', 'scale-105', 'ring-2', 'ring-blue-300');
-                b.classList.add('bg-white', 'text-gray-600', 'border-gray-200');
-            });
-        }
-
-        // Lógica de Copiar al Portapapeles
-        function copyToClipboard(elementId) {
-            const text = document.getElementById(elementId).innerText;
-            navigator.clipboard.writeText(text).then(() => {
-                alert('¡Copiado al portapapeles!');
-            });
-        }
-    </script>
+  </div>
 </section>
 
-
 <!-- Enlaces de interes -->
-<section class="bg-gray-50 py-10">
+<section class="bg-gray-50 reveal">
 
 <div>
     <h1 class="text-2xl font-bold text-center">Enlaces de interes</h1>
@@ -1046,7 +973,7 @@
   </div>
 </div>
 
-<section class="py-20 px-4 md:px-8">
+<section class="py-20 px-4 md:px-8 reveal">
     <div class="max-w-6xl mx-auto shadow-2xl rounded-3xl overflow-hidden bg-white flex flex-col lg:flex-row">
         
         <div class="lg:w-5/12 bg-blue-900 text-white p-10 md:p-14 relative overflow-hidden flex flex-col justify-between">
@@ -1158,7 +1085,7 @@
     </div>
 </section>
 
-<footer class="bg-blue-900 text-white ">
+<footer class="bg-blue-900 text-white">
         <div class="px-4 pt-16 mx-auto sm:max-w-xl md:max-w-full lg:max-w-screen-xl md:px-24 lg:px-8">
   <div class="grid gap-10 row-gap-6 mb-8 sm:grid-cols-2 lg:grid-cols-4">
     <div class="sm:col-span-2">
@@ -1359,5 +1286,33 @@
     </a>
 
 </div>
+
+<!-- script para el scroll reveal -->
+
+<script>
+    function reveal() {
+        var reveals = document.querySelectorAll(".reveal");
+
+        for (var i = 0; i < reveals.length; i++) {
+            var windowHeight = window.innerHeight;
+            var elementTop = reveals[i].getBoundingClientRect().top;
+            var elementVisible = 150; // Ajusta este valor para que el efecto ocurra antes o después
+
+            if (elementTop < windowHeight - elementVisible) {
+                reveals[i].classList.add("active");
+            } else {
+                // Opcional: Quita el 'else' si quieres que la animación ocurra solo una vez
+                reveals[i].classList.remove("active");
+            }
+        }
+    }
+
+    window.addEventListener("scroll", reveal);
+    
+    // Llamar a la función al cargar para mostrar los elementos que ya están visibles
+    reveal();
+</script>
+
+<!-- fin del scroll reveal -->
 </body>
 </html>
