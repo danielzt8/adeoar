@@ -243,10 +243,43 @@
           </div>
         </header>
 
-        <div class="rounded-2xl overflow-hidden shadow-lg mb-10 h-64 md:h-96 w-full">
-          <img
-            src="https://images.pexels.com/photos/1181675/pexels-photo-1181675.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
-            alt="Mujeres aprendiendo computación" class="w-full h-full object-cover" />
+        <!-- Image Slider Container -->
+        <div class="rounded-2xl overflow-hidden shadow-lg mb-10 h-64 md:h-96 w-full relative group">
+          <!-- Slides -->
+          <div id="slider-track" class="flex transition-transform duration-500 ease-out h-full">
+            <div class="min-w-full h-full">
+              <img
+                src="https://images.pexels.com/photos/1181675/pexels-photo-1181675.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
+                alt="Mujeres aprendiendo computación" class="w-full h-full object-cover" />
+            </div>
+            <div class="min-w-full h-full">
+              <img src="https://images.pexels.com/photos/3760323/pexels-photo-3760323.jpeg"
+                alt="Encuentro de confraternidad" class="w-full h-full object-cover" />
+            </div>
+            <div class="min-w-full h-full">
+              <img src="https://images.pexels.com/photos/1181438/pexels-photo-1181438.jpeg" alt="Asamblea general"
+                class="w-full h-full object-cover" />
+            </div>
+          </div>
+
+          <!-- Navigation Buttons -->
+          <button id="prev-slide"
+            class="absolute left-4 top-1/2 -translate-y-1/2 bg-white/80 hover:bg-white text-blue-900 p-2 rounded-full shadow-md opacity-0 group-hover:opacity-100 transition-opacity">
+            <ion-icon name="chevron-back-outline" class="text-xl"></ion-icon>
+          </button>
+          <button id="next-slide"
+            class="absolute right-4 top-1/2 -translate-y-1/2 bg-white/80 hover:bg-white text-blue-900 p-2 rounded-full shadow-md opacity-0 group-hover:opacity-100 transition-opacity">
+            <ion-icon name="chevron-forward-outline" class="text-xl"></ion-icon>
+          </button>
+
+          <!-- Dots Indicator -->
+          <div class="absolute bottom-4 left-1/2 -translate-x-1/2 flex space-x-2">
+            <button class="w-3 h-3 rounded-full bg-white transition-opacity" data-index="0"></button>
+            <button class="w-3 h-3 rounded-full bg-white/50 hover:bg-white/80 transition-opacity"
+              data-index="1"></button>
+            <button class="w-3 h-3 rounded-full bg-white/50 hover:bg-white/80 transition-opacity"
+              data-index="2"></button>
+          </div>
         </div>
 
         <div class="prose max-w-none text-lg">
@@ -537,11 +570,70 @@
 
   <script>
     document.addEventListener("DOMContentLoaded", () => {
+      // Mobile Menu Logic
       const button = document.getElementById("mobile-menu-button");
       const menu = document.getElementById("mobile-menu");
       button.addEventListener("click", () => {
         menu.classList.toggle("hidden");
       });
+
+      // Slider Logic
+      const track = document.getElementById("slider-track");
+      const slides = track.children;
+      const nextBtn = document.getElementById("next-slide");
+      const prevBtn = document.getElementById("prev-slide");
+      const dots = document.querySelectorAll("[data-index]");
+      let currentIndex = 0;
+      const totalSlides = slides.length;
+
+      function updateSlider() {
+        track.style.transform = `translateX(-${currentIndex * 100}%)`;
+        dots.forEach((dot, index) => {
+          if (index === currentIndex) {
+            dot.classList.remove("bg-white/50", "hover:bg-white/80");
+            dot.classList.add("bg-white");
+          } else {
+            dot.classList.add("bg-white/50", "hover:bg-white/80");
+            dot.classList.remove("bg-white");
+          }
+        });
+      }
+
+      function nextSlide() {
+        currentIndex = (currentIndex + 1) % totalSlides;
+        updateSlider();
+      }
+
+      function prevSlide() {
+        currentIndex = (currentIndex - 1 + totalSlides) % totalSlides;
+        updateSlider();
+      }
+
+      nextBtn.addEventListener("click", () => {
+        nextSlide();
+        resetTimer();
+      });
+
+      prevBtn.addEventListener("click", () => {
+        prevSlide();
+        resetTimer();
+      });
+
+      dots.forEach((dot) => {
+        dot.addEventListener("click", (e) => {
+          currentIndex = parseInt(e.target.getAttribute("data-index"));
+          updateSlider();
+          resetTimer();
+        });
+      });
+
+      // Auto-play
+      let slideInterval = setInterval(nextSlide, 5000);
+
+      function resetTimer() {
+        clearInterval(slideInterval);
+        slideInterval = setInterval(nextSlide, 5000);
+      }
     });
   </script>
 </body>
