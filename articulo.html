@@ -1,770 +1,549 @@
 <!DOCTYPE html>
 <html lang="es">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Artículo - ADEOAR</title>
-    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
-    <script
-      type="module"
-      src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"
-    ></script>
-    <script
-      nomodule
-      src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"
-    ></script>
 
-    <style>
-      /* Estilos específicos para el contenido del artículo */
-      .prose p {
-        margin-bottom: 1.5rem;
-        line-height: 1.8;
-        color: #4b5563;
-      }
-      .prose h2 {
-        color: #1e3a8a;
-        font-size: 1.875rem;
-        font-weight: 700;
-        margin-top: 2.5rem;
-        margin-bottom: 1rem;
-      }
-      .prose h3 {
-        color: #1e3a8a;
-        font-size: 1.5rem;
-        font-weight: 600;
-        margin-top: 2rem;
-        margin-bottom: 0.75rem;
-      }
-      .prose ul {
-        list-style-type: disc;
-        padding-left: 1.5rem;
-        margin-bottom: 1.5rem;
-        color: #4b5563;
-      }
-      .prose blockquote {
-        border-left: 4px solid #dc2626;
-        padding-left: 1rem;
-        font-style: italic;
-        color: #374151;
-        background: #f9fafb;
-        padding: 1.5rem;
-        border-radius: 0 0.5rem 0.5rem 0;
-        margin-bottom: 2rem;
-      }
-      .font-serif-display {
-        font-family: ui-serif, Georgia, Cambria, "Times New Roman", Times, serif;
-      }
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Artículo - ADEOAR</title>
+  <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+  <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+  <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
 
-      /* Asegurar que el menú móvil se vea bien sobre el contenido */
-      #mobile-menu {
-        position: relative;
-        z-index: 50;
-      }
-    </style>
-  </head>
-  <body class="bg-gray-50 font-sans">
-    <header class="bg-white shadow-sm relative z-50">
-      <div class="container mx-auto px-4 py-4">
-        <div class="flex justify-center md:hidden mb-4">
-          <div class="flex flex-col items-center space-y-1">
-            <img
-              src="https://upload.wikimedia.org/wikipedia/commons/thumb/2/26/Coat_of_arms_of_the_Dominican_Republic.svg/1200px-Coat_of_arms_of_the_Dominican_Republic.svg.png"
-              alt="Escudo República Dominicana"
-              class="h-10 w-auto"
-            />
-            <span class="font-serif italic text-gray-700"
-              >República Dominicana</span
-            >
-          </div>
-        </div>
+  <style>
+    /* Estilos específicos para el contenido del artículo */
+    .prose p {
+      margin-bottom: 1.5rem;
+      line-height: 1.8;
+      color: #4b5563;
+    }
 
-        <div
-          class="flex flex-col md:flex-row md:justify-between md:items-center"
-        >
-          <div
-            class="flex flex-col items-center md:flex-row md:items-center md:space-x-4"
-          >
-            <img
-              src="data:image/png;base64,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"
-              alt="Logo Academia Naval"
-              class="h-20 w-auto"
-            />
-            <div class="text-center md:text-left mt-2 md:mt-0">
-              <h1 class="text-2xl font-bold text-blue-900">Asociación</h1>
-              <h1 class="text-2xl font-semibold text-blue-900 -mt-2">
-                De Esposas de Oficiales
-              </h1>
-              <p class="text-sm text-gray-600">
-                Armada de República Dominicana
-              </p>
-            </div>
-          </div>
+    .prose h2 {
+      color: #1e3a8a;
+      font-size: 1.875rem;
+      font-weight: 700;
+      margin-top: 2.5rem;
+      margin-bottom: 1rem;
+    }
 
-          <div class="hidden md:flex flex-col items-end space-y-3">
-            <div class="flex items-center">
-              <input
-                type="text"
-                placeholder="Búsqueda"
-                class="border border-r-0 border-gray-300 px-3 py-1 focus:outline-none focus:ring-1 focus:ring-blue-500"
-              />
-              <button class="bg-blue-800 text-white p-2 hover:bg-blue-900">
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  class="h-5 w-5"
-                  viewBox="0 0 20 20"
-                  fill="currentColor"
-                >
-                  <path
-                    fill-rule="evenodd"
-                    d="M8 4a4 4 0 100 8 4 4 0 000-8zM2 8a6 6 0 1110.89 3.476l4.817 4.817a1 1 0 01-1.414 1.414l-4.816-4.816A6 6 0 012 8z"
-                    clip-rule="evenodd"
-                  />
-                </svg>
-              </button>
-            </div>
-          </div>
-        </div>
+    .prose h3 {
+      color: #1e3a8a;
+      font-size: 1.5rem;
+      font-weight: 600;
+      margin-top: 2rem;
+      margin-bottom: 0.75rem;
+    }
 
-        <div
-          class="md:hidden mt-6 border border-gray-300 rounded overflow-hidden flex items-stretch shadow-md"
-        >
-          <input
-            type="text"
-            placeholder="Búsqueda"
-            class="flex-grow px-3 py-3 text-lg focus:outline-none"
-            style="border-radius: 0; border: none"
-          />
+    .prose ul {
+      list-style-type: disc;
+      padding-left: 1.5rem;
+      margin-bottom: 1.5rem;
+      color: #4b5563;
+    }
 
-          <button
-            id="mobile-menu-button"
-            class="bg-blue-900 text-white p-3 hover:bg-blue-800 w-16 flex items-center justify-center"
-          >
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              class="h-6 w-6"
-              fill="none"
-              viewBox="0 0 24 24"
-              stroke="currentColor"
-              stroke-width="2"
-            >
-              <path
-                stroke-linecap="round"
-                stroke-linejoin="round"
-                d="M4 6h16M4 12h16m-7 6h7"
-              />
-            </svg>
-          </button>
+    .prose blockquote {
+      border-left: 4px solid #dc2626;
+      padding-left: 1rem;
+      font-style: italic;
+      color: #374151;
+      background: #f9fafb;
+      padding: 1.5rem;
+      border-radius: 0 0.5rem 0.5rem 0;
+      margin-bottom: 2rem;
+    }
+
+    .font-serif-display {
+      font-family: ui-serif, Georgia, Cambria, "Times New Roman", Times, serif;
+    }
+
+    /* Asegurar que el menú móvil se vea bien sobre el contenido */
+    #mobile-menu {
+      position: relative;
+      z-index: 50;
+    }
+  </style>
+</head>
+
+<body class="bg-gray-50 font-sans">
+  <header class="bg-white shadow-sm relative z-50">
+    <div class="container mx-auto px-4 py-4">
+      <div class="flex justify-center md:hidden mb-4">
+        <div class="flex flex-col items-center space-y-1">
+          <img
+            src="https://upload.wikimedia.org/wikipedia/commons/thumb/2/26/Coat_of_arms_of_the_Dominican_Republic.svg/1200px-Coat_of_arms_of_the_Dominican_Republic.svg.png"
+            alt="Escudo República Dominicana" class="h-10 w-auto" />
+          <span class="font-serif italic text-gray-700">República Dominicana</span>
         </div>
       </div>
 
-      <nav
-        id="mobile-menu"
-        class="hidden md:hidden bg-blue-800 border-t border-red-600"
-      >
-        <ul class="flex flex-col py-2">
-          <li>
-            <a
-              href="/index.html"
-              class="block bg-red-600 text-white font-semibold px-4 py-2 hover:bg-red-700"
-              >Inicio</a
-            >
-          </li>
-          <li>
-            <a
-              href="#"
-              class="block text-white font-semibold px-4 py-2 hover:bg-blue-700"
-              >Sobre nosotros</a
-            >
-          </li>
-          <li>
-            <a
-              href="#"
-              class="block text-white font-semibold px-4 py-2 hover:bg-blue-700"
-              >Servicios</a
-            >
-          </li>
-          <li>
-            <a
-              href="#"
-              class="block text-white font-semibold px-4 py-2 hover:bg-blue-700"
-              >Transparencia</a
-            >
-          </li>
-          <li>
-            <a
-              href="/articulos.html"
-              class="block text-white font-semibold px-4 py-2 hover:bg-blue-700"
-              >Noticias</a
-            >
-          </li>
-          <li>
-            <a
-              href="#"
-              class="block text-white font-semibold px-4 py-2 hover:bg-blue-700"
-              >Aula Virtual</a
-            >
-          </li>
-          <li>
-            <a
-              href="#"
-              class="block text-white font-semibold px-4 py-2 hover:bg-blue-700"
-              >Reglamentos</a
-            >
-          </li>
-          <li>
-            <a
-              href="#"
-              class="block text-white font-semibold px-4 py-2 hover:bg-blue-700"
-              >Contactos</a
-            >
-          </li>
-        </ul>
-      </nav>
-
-      <nav class="hidden md:block bg-blue-900">
-        <div class="container mx-auto">
-          <ul class="flex">
-            <li>
-              <a
-                href="/index.html"
-                class="block bg-red-600 text-white font-semibold px-5 py-3"
-                >Inicio</a
-              >
-            </li>
-            <li>
-              <a
-                href="#"
-                class="flex items-center space-x-1 text-white font-semibold px-5 py-3 hover:bg-blue-800"
-                ><span>Sobre nosotros</span
-                ><svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  class="h-4 w-4"
-                  viewBox="0 0 20 20"
-                  fill="currentColor"
-                >
-                  <path
-                    fill-rule="evenodd"
-                    d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z"
-                    clip-rule="evenodd"
-                  /></svg
-              ></a>
-            </li>
-            <li>
-              <a
-                href="#"
-                class="flex items-center space-x-1 text-white font-semibold px-5 py-3 hover:bg-blue-800"
-                ><span>Servicios</span
-                ><svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  class="h-4 w-4"
-                  viewBox="0 0 20 20"
-                  fill="currentColor"
-                >
-                  <path
-                    fill-rule="evenodd"
-                    d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z"
-                    clip-rule="evenodd"
-                  /></svg
-              ></a>
-            </li>
-            <li>
-              <a
-                href="#"
-                class="block text-white font-semibold px-5 py-3 hover:bg-blue-800"
-                >Transparencia</a
-              >
-            </li>
-            <li>
-              <a
-                href="/articulos.html"
-                class="block text-white font-semibold px-5 py-3 hover:bg-blue-800"
-                >Noticias</a
-              >
-            </li>
-            <li>
-              <a
-                href="#"
-                class="block text-white font-semibold px-5 py-3 hover:bg-blue-800"
-                >Aula Virtual</a
-              >
-            </li>
-            <li>
-              <a
-                href="#"
-                class="flex items-center space-x-1 text-white font-semibold px-5 py-3 hover:bg-blue-800"
-                ><span>Reglamentos</span
-                ><svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  class="h-4 w-4"
-                  viewBox="0 0 20 20"
-                  fill="currentColor"
-                >
-                  <path
-                    fill-rule="evenodd"
-                    d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z"
-                    clip-rule="evenodd"
-                  /></svg
-              ></a>
-            </li>
-            <li>
-              <a
-                href="#"
-                class="block text-white font-semibold px-5 py-3 hover:bg-blue-800"
-                >Contactos</a
-              >
-            </li>
-          </ul>
+      <div class="flex flex-col md:flex-row md:justify-between md:items-center">
+        <div class="flex flex-col items-center md:flex-row md:items-center md:space-x-4">
+          <img
+            src="data:image/png;base64,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"
+            alt="Logo Academia Naval" class="h-20 w-auto" />
+          <div class="text-center md:text-left mt-2 md:mt-0">
+            <h1 class="text-2xl font-bold text-blue-900">Asociación</h1>
+            <h1 class="text-2xl font-semibold text-blue-900 -mt-2">
+              De Esposas de Oficiales
+            </h1>
+            <p class="text-sm text-gray-600">
+              Armada de República Dominicana
+            </p>
+          </div>
         </div>
-      </nav>
-    </header>
-    <div class="bg-gray-100 border-b border-gray-200">
-      <div class="container mx-auto px-4 py-3">
-        <ol class="flex text-sm text-gray-500 space-x-2">
-          <li><a href="index.html" class="hover:text-blue-900">Inicio</a></li>
-          <li><span>/</span></li>
-          <li>
-            <a href="noticias.html" class="hover:text-blue-900">Noticias</a>
-          </li>
-          <li><span>/</span></li>
-          <li class="text-gray-800 font-semibold truncate max-w-xs">
-            Clausura exitosa del taller de habilidades digitales
-          </li>
-        </ol>
+
+        <div class="hidden md:flex flex-col items-end space-y-3">
+          <div class="flex items-center">
+            <input type="text" placeholder="Búsqueda"
+              class="border border-r-0 border-gray-300 px-3 py-1 focus:outline-none focus:ring-1 focus:ring-blue-500" />
+            <button class="bg-blue-800 text-white p-2 hover:bg-blue-900">
+              <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
+                <path fill-rule="evenodd"
+                  d="M8 4a4 4 0 100 8 4 4 0 000-8zM2 8a6 6 0 1110.89 3.476l4.817 4.817a1 1 0 01-1.414 1.414l-4.816-4.816A6 6 0 012 8z"
+                  clip-rule="evenodd" />
+              </svg>
+            </button>
+          </div>
+        </div>
+      </div>
+
+      <div class="md:hidden mt-6 border border-gray-300 rounded overflow-hidden flex items-stretch shadow-md">
+        <input type="text" placeholder="Búsqueda" class="flex-grow px-3 py-3 text-lg focus:outline-none"
+          style="border-radius: 0; border: none" />
+
+        <button id="mobile-menu-button"
+          class="bg-blue-900 text-white p-3 hover:bg-blue-800 w-16 flex items-center justify-center">
+          <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor"
+            stroke-width="2">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M4 6h16M4 12h16m-7 6h7" />
+          </svg>
+        </button>
       </div>
     </div>
 
-    <main class="container mx-auto px-4 py-10">
-      <div class="flex flex-col lg:flex-row gap-12">
-        <article class="lg:w-2/3">
-          <header class="mb-8">
-            <span
-              class="inline-block bg-teal-100 text-teal-800 text-xs font-bold uppercase tracking-wider px-3 py-1 rounded-full mb-4"
-            >
-              Educación
-            </span>
-            <h1
-              class="text-3xl md:text-4xl lg:text-5xl font-serif-display font-bold text-blue-900 leading-tight mb-6"
-            >
-              Clausura exitosa del taller de habilidades digitales para socias
-            </h1>
+    <nav id="mobile-menu" class="hidden md:hidden bg-blue-800 border-t border-red-600">
+      <ul class="flex flex-col py-2">
+        <li>
+          <a href="/index.html" class="block bg-red-600 text-white font-semibold px-4 py-2 hover:bg-red-700">Inicio</a>
+        </li>
+        <li>
+          <a href="general.html" class="block text-white font-semibold px-4 py-2 hover:bg-blue-700">Sobre nosotros</a>
+        </li>
+        <li>
+          <a href="#" class="block text-white font-semibold px-4 py-2 hover:bg-blue-700">Servicios</a>
+        </li>
+        <li>
+          <a href="#" class="block text-white font-semibold px-4 py-2 hover:bg-blue-700">Transparencia</a>
+        </li>
+        <li>
+          <a href="/articulos.html" class="block text-white font-semibold px-4 py-2 hover:bg-blue-700">Noticias</a>
+        </li>
+        <li>
+          <a href="#" class="block text-white font-semibold px-4 py-2 hover:bg-blue-700">Aula Virtual</a>
+        </li>
+        <li>
+          <a href="#" class="block text-white font-semibold px-4 py-2 hover:bg-blue-700">Reglamentos</a>
+        </li>
+        <li>
+          <a href="#" class="block text-white font-semibold px-4 py-2 hover:bg-blue-700">Contactos</a>
+        </li>
+      </ul>
+    </nav>
 
-            <div
-              class="flex items-center text-gray-500 text-sm border-b border-gray-200 pb-6 mb-6"
-            >
-              <div class="flex items-center mr-6">
-                <ion-icon
-                  name="calendar-outline"
-                  class="mr-2 text-lg"
-                ></ion-icon>
-                <span>20 Febrero, 2024</span>
-              </div>
-              <div class="flex items-center mr-6">
-                <ion-icon
-                  name="person-circle-outline"
-                  class="mr-2 text-lg"
-                ></ion-icon>
-                <span>Por Dra. María Gómez</span>
-              </div>
-              <div class="flex items-center">
-                <ion-icon name="time-outline" class="mr-2 text-lg"></ion-icon>
-                <span>5 min de lectura</span>
-              </div>
-            </div>
-          </header>
-
-          <div
-            class="rounded-2xl overflow-hidden shadow-lg mb-10 h-64 md:h-96 w-full"
-          >
-            <img
-              src="https://images.pexels.com/photos/1181675/pexels-photo-1181675.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
-              alt="Mujeres aprendiendo computación"
-              class="w-full h-full object-cover"
-            />
-          </div>
-
-          <div class="prose max-w-none text-lg">
-            <p class="lead text-xl text-gray-600 font-medium mb-8">
-              En un esfuerzo continuo por empoderar a nuestras socias, la
-              Asociación de Esposas de Oficiales (ADEOAR) celebró este fin de
-              semana la graduación de 50 participantes del curso intensivo
-              "Tecnología para Emprendedoras".
-            </p>
-
-            <p>
-              La jornada, que se extendió durante cuatro semanas, abarcó temas
-              fundamentales como el manejo de paquetes de oficina, creación de
-              correos corporativos y el uso estratégico de redes sociales para
-              impulsar pequeños negocios. El evento tuvo lugar en el salón
-              principal del Club Naval y contó con la presencia de la directiva.
-            </p>
-
-            <blockquote>
-              "La tecnología no es el futuro, es el presente. Ver a nuestras
-              socias perder el miedo al computador y crear sus propias marcas
-              digitales es el mayor logro de esta gestión." — Presidenta de
-              ADEOAR.
-            </blockquote>
-
-            <h2>Impacto en la comunidad</h2>
-            <p>
-              Muchas de las participantes son dueñas de pequeños emprendimientos
-              de repostería, costura y artesanías. Gracias a este taller, ahora
-              pueden:
-            </p>
-            <ul>
-              <li>Gestionar sus pedidos de manera digital.</li>
-              <li>
-                Diseñar promociones básicas utilizando herramientas gratuitas
-                como Canva.
-              </li>
-              <li>
-                Mantener una comunicación más fluida y profesional con sus
-                clientes.
-              </li>
-            </ul>
-
-            <h3>Próximos pasos</h3>
-            <p>
-              Debido al éxito rotundo y la alta demanda, nos complace anunciar
-              que se abrirá una <strong>segunda convocatoria</strong> para el
-              mes de abril. Las interesadas pueden acercarse a las oficinas
-              administrativas o registrarse a través de nuestro formulario en
-              línea en la sección de
-              <a href="#" class="text-blue-600 hover:underline font-bold"
-                >Aula Virtual</a
-              >.
-            </p>
-
-            <p>
-              Agradecemos profundamente a nuestros facilitadores voluntarios y a
-              las empresas patrocinadoras que donaron las tablets sorteadas al
-              final de la ceremonia. ¡Juntas seguimos creciendo!
-            </p>
-          </div>
-
-          <div
-            class="mt-12 pt-6 border-t border-gray-200 flex flex-col md:flex-row justify-between items-center gap-4"
-          >
-            <div class="flex flex-wrap gap-2">
-              <span class="text-gray-500 text-sm font-semibold mr-2"
-                >Etiquetas:</span
-              >
-              <a
-                href="#"
-                class="bg-gray-100 hover:bg-gray-200 text-gray-600 px-3 py-1 rounded text-sm transition-colors"
-                >#Tecnología</a
-              >
-              <a
-                href="#"
-                class="bg-gray-100 hover:bg-gray-200 text-gray-600 px-3 py-1 rounded text-sm transition-colors"
-                >#Mujeres</a
-              >
-              <a
-                href="#"
-                class="bg-gray-100 hover:bg-gray-200 text-gray-600 px-3 py-1 rounded text-sm transition-colors"
-                >#Capacitación</a
-              >
-            </div>
-
-            <div class="flex items-center space-x-3">
-              <span class="text-gray-500 text-sm font-semibold"
-                >Compartir:</span
-              >
-              <button
-                class="w-8 h-8 rounded-full bg-blue-100 text-blue-600 flex items-center justify-center hover:bg-blue-600 hover:text-white transition-all"
-              >
-                <ion-icon name="logo-facebook"></ion-icon>
-              </button>
-              <button
-                class="w-8 h-8 rounded-full bg-blue-100 text-blue-400 flex items-center justify-center hover:bg-blue-400 hover:text-white transition-all"
-              >
-                <ion-icon name="logo-twitter"></ion-icon>
-              </button>
-              <button
-                class="w-8 h-8 rounded-full bg-green-100 text-green-600 flex items-center justify-center hover:bg-green-600 hover:text-white transition-all"
-              >
-                <ion-icon name="logo-whatsapp"></ion-icon>
-              </button>
-            </div>
-          </div>
-
-          <div class="grid grid-cols-2 gap-4 mt-12">
-            <a
-              href="#"
-              class="group border border-gray-200 p-4 rounded-xl hover:border-blue-300 hover:bg-blue-50 transition-all text-left"
-            >
-              <span
-                class="text-xs text-gray-400 uppercase font-bold block mb-1 group-hover:text-blue-600"
-                >← Anterior</span
-              >
-              <h4
-                class="font-bold text-gray-700 group-hover:text-blue-900 truncate"
-              >
-                Jornada Médica Infantil
-              </h4>
-            </a>
-            <a
-              href="#"
-              class="group border border-gray-200 p-4 rounded-xl hover:border-blue-300 hover:bg-blue-50 transition-all text-right"
-            >
-              <span
-                class="text-xs text-gray-400 uppercase font-bold block mb-1 group-hover:text-blue-600"
-                >Siguiente →</span
-              >
-              <h4
-                class="font-bold text-gray-700 group-hover:text-blue-900 truncate"
-              >
-                Donación de Útiles Escolares
-              </h4>
-            </a>
-          </div>
-        </article>
-
-        <aside class="lg:w-1/3 space-y-8">
-          <div
-            class="bg-white p-6 rounded-2xl shadow-sm border border-gray-100"
-          >
-            <h3 class="text-lg font-bold text-gray-800 mb-4">Buscar</h3>
-            <div class="relative">
-              <input
-                type="text"
-                placeholder="Escribe aquí..."
-                class="w-full pl-4 pr-10 py-3 rounded-lg bg-gray-50 border border-gray-200 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:bg-white transition-all"
-              />
-              <button
-                class="absolute right-3 top-1/2 -translate-y-1/2 text-gray-400 hover:text-blue-600"
-              >
-                <ion-icon name="search-outline" class="text-xl"></ion-icon>
-              </button>
-            </div>
-          </div>
-
-          <div
-            class="bg-white p-6 rounded-2xl shadow-sm border border-gray-100"
-          >
-            <h3
-              class="text-lg font-bold text-gray-800 mb-4 border-l-4 border-red-600 pl-3"
-            >
-              Categorías
-            </h3>
-            <ul class="space-y-2">
-              <li>
-                <a
-                  href="#"
-                  class="flex justify-between items-center text-gray-600 hover:text-blue-900 hover:bg-gray-50 p-2 rounded transition-colors group"
-                >
-                  <span>Actividades Sociales</span>
-                  <span
-                    class="bg-gray-100 text-gray-500 text-xs px-2 py-1 rounded-full group-hover:bg-blue-100 group-hover:text-blue-700"
-                    >12</span
-                  >
-                </a>
-              </li>
-              <li>
-                <a
-                  href="#"
-                  class="flex justify-between items-center text-gray-600 hover:text-blue-900 hover:bg-gray-50 p-2 rounded transition-colors group"
-                >
-                  <span>Educación & Talleres</span>
-                  <span
-                    class="bg-gray-100 text-gray-500 text-xs px-2 py-1 rounded-full group-hover:bg-blue-100 group-hover:text-blue-700"
-                    >8</span
-                  >
-                </a>
-              </li>
-              <li>
-                <a
-                  href="#"
-                  class="flex justify-between items-center text-gray-600 hover:text-blue-900 hover:bg-gray-50 p-2 rounded transition-colors group"
-                >
-                  <span>Acción Cívica</span>
-                  <span
-                    class="bg-gray-100 text-gray-500 text-xs px-2 py-1 rounded-full group-hover:bg-blue-100 group-hover:text-blue-700"
-                    >5</span
-                  >
-                </a>
-              </li>
-              <li>
-                <a
-                  href="#"
-                  class="flex justify-between items-center text-gray-600 hover:text-blue-900 hover:bg-gray-50 p-2 rounded transition-colors group"
-                >
-                  <span>Salud</span>
-                  <span
-                    class="bg-gray-100 text-gray-500 text-xs px-2 py-1 rounded-full group-hover:bg-blue-100 group-hover:text-blue-700"
-                    >3</span
-                  >
-                </a>
-              </li>
-            </ul>
-          </div>
-
-          <div
-            class="bg-white p-6 rounded-2xl shadow-sm border border-gray-100"
-          >
-            <h3
-              class="text-lg font-bold text-gray-800 mb-6 border-l-4 border-teal-500 pl-3"
-            >
-              Lo más reciente
-            </h3>
-
-            <div class="space-y-6">
-              <a href="#" class="flex gap-4 group">
-                <div class="w-20 h-20 rounded-lg overflow-hidden flex-shrink-0">
-                  <img
-                    src="https://images.pexels.com/photos/3760323/pexels-photo-3760323.jpeg"
-                    class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
-                  />
-                </div>
-                <div>
-                  <h4
-                    class="font-bold text-gray-800 text-sm leading-snug mb-1 group-hover:text-blue-700 transition-colors"
-                  >
-                    Encuentro de confraternidad anual 2024
-                  </h4>
-                  <span class="text-xs text-gray-400">15 Ene, 2024</span>
-                </div>
-              </a>
-
-              <a href="#" class="flex gap-4 group">
-                <div class="w-20 h-20 rounded-lg overflow-hidden flex-shrink-0">
-                  <img
-                    src="https://images.pexels.com/photos/6646917/pexels-photo-6646917.jpeg"
-                    class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
-                  />
-                </div>
-                <div>
-                  <h4
-                    class="font-bold text-gray-800 text-sm leading-snug mb-1 group-hover:text-blue-700 transition-colors"
-                  >
-                    Entrega de juguetes en comunidades
-                  </h4>
-                  <span class="text-xs text-gray-400">05 Dic, 2023</span>
-                </div>
-              </a>
-
-              <a href="#" class="flex gap-4 group">
-                <div class="w-20 h-20 rounded-lg overflow-hidden flex-shrink-0">
-                  <img
-                    src="https://images.pexels.com/photos/1181438/pexels-photo-1181438.jpeg"
-                    class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
-                  />
-                </div>
-                <div>
-                  <h4
-                    class="font-bold text-gray-800 text-sm leading-snug mb-1 group-hover:text-blue-700 transition-colors"
-                  >
-                    Asamblea general ordinaria
-                  </h4>
-                  <span class="text-xs text-gray-400">28 Nov, 2023</span>
-                </div>
-              </a>
-            </div>
-          </div>
-
-          <div
-            class="relative rounded-2xl overflow-hidden text-center text-white py-10 px-6"
-          >
-            <div class="absolute inset-0 bg-blue-900 opacity-90 z-10"></div>
-            <img
-              src="https://images.pexels.com/photos/296282/pexels-photo-296282.jpeg"
-              class="absolute inset-0 w-full h-full object-cover"
-            />
-
-            <div class="relative z-20">
-              <h3 class="text-2xl font-bold font-serif-display mb-2">
-                ¡Apoya nuestra causa!
-              </h3>
-              <p class="text-sm text-blue-100 mb-6">
-                Tu donación hace posible estos talleres.
-              </p>
-              <button
-                class="bg-red-600 hover:bg-red-700 text-white font-bold py-2 px-6 rounded-full shadow-lg transition-transform hover:-translate-y-1"
-              >
-                Donar Ahora
-              </button>
-            </div>
-          </div>
-        </aside>
+    <nav class="hidden md:block bg-blue-900">
+      <div class="container mx-auto">
+        <ul class="flex">
+          <li>
+            <a href="/index.html" class="block bg-red-600 text-white font-semibold px-5 py-3">Inicio</a>
+          </li>
+          <li>
+            <a href="general.html"
+              class="flex items-center space-x-1 text-white font-semibold px-5 py-3 hover:bg-blue-800"><span>Sobre
+                nosotros</span><svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" viewBox="0 0 20 20"
+                fill="currentColor">
+                <path fill-rule="evenodd"
+                  d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z"
+                  clip-rule="evenodd" />
+              </svg></a>
+          </li>
+          <li>
+            <a href="#"
+              class="flex items-center space-x-1 text-white font-semibold px-5 py-3 hover:bg-blue-800"><span>Servicios</span><svg
+                xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" viewBox="0 0 20 20" fill="currentColor">
+                <path fill-rule="evenodd"
+                  d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z"
+                  clip-rule="evenodd" />
+              </svg></a>
+          </li>
+          <li>
+            <a href="#" class="block text-white font-semibold px-5 py-3 hover:bg-blue-800">Transparencia</a>
+          </li>
+          <li>
+            <a href="/articulos.html" class="block text-white font-semibold px-5 py-3 hover:bg-blue-800">Noticias</a>
+          </li>
+          <li>
+            <a href="#" class="block text-white font-semibold px-5 py-3 hover:bg-blue-800">Aula Virtual</a>
+          </li>
+          <li>
+            <a href="#"
+              class="flex items-center space-x-1 text-white font-semibold px-5 py-3 hover:bg-blue-800"><span>Reglamentos</span><svg
+                xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" viewBox="0 0 20 20" fill="currentColor">
+                <path fill-rule="evenodd"
+                  d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z"
+                  clip-rule="evenodd" />
+              </svg></a>
+          </li>
+          <li>
+            <a href="#" class="block text-white font-semibold px-5 py-3 hover:bg-blue-800">Contactos</a>
+          </li>
+        </ul>
       </div>
+    </nav>
+  </header>
+  <div class="bg-gray-100 border-b border-gray-200">
+    <div class="container mx-auto px-4 py-3">
+      <ol class="flex text-sm text-gray-500 space-x-2">
+        <li><a href="index.html" class="hover:text-blue-900">Inicio</a></li>
+        <li><span>/</span></li>
+        <li>
+          <a href="noticias.html" class="hover:text-blue-900">Noticias</a>
+        </li>
+        <li><span>/</span></li>
+        <li class="text-gray-800 font-semibold truncate max-w-xs">
+          Clausura exitosa del taller de habilidades digitales
+        </li>
+      </ol>
+    </div>
+  </div>
 
-      <div class="mt-20 pt-10 border-t border-gray-200">
-        <h2 class="text-2xl font-bold text-gray-800 mb-8">
-          También te podría interesar
-        </h2>
-        <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-          <a href="#" class="group">
-            <div class="h-48 rounded-xl overflow-hidden mb-4">
-              <img
-                src="https://images.pexels.com/photos/769289/pexels-photo-769289.jpeg"
-                class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
-              />
+  <main class="container mx-auto px-4 py-10">
+    <div class="flex flex-col lg:flex-row gap-12">
+      <article class="lg:w-2/3">
+        <header class="mb-8">
+          <span
+            class="inline-block bg-teal-100 text-teal-800 text-xs font-bold uppercase tracking-wider px-3 py-1 rounded-full mb-4">
+            Educación
+          </span>
+          <h1 class="text-3xl md:text-4xl lg:text-5xl font-serif-display font-bold text-blue-900 leading-tight mb-6">
+            Clausura exitosa del taller de habilidades digitales para socias
+          </h1>
+
+          <div class="flex items-center text-gray-500 text-sm border-b border-gray-200 pb-6 mb-6">
+            <div class="flex items-center mr-6">
+              <ion-icon name="calendar-outline" class="mr-2 text-lg"></ion-icon>
+              <span>20 Febrero, 2024</span>
             </div>
-            <h3
-              class="font-bold text-lg text-gray-800 group-hover:text-blue-900 mb-2"
-            >
-              Curso de repostería avanzada
-            </h3>
-            <p class="text-gray-500 text-sm line-clamp-2">
-              Aprende nuevas técnicas y recetas en nuestro próximo ciclo de
-              talleres...
-            </p>
+            <div class="flex items-center mr-6">
+              <ion-icon name="person-circle-outline" class="mr-2 text-lg"></ion-icon>
+              <span>Por Dra. María Gómez</span>
+            </div>
+            <div class="flex items-center">
+              <ion-icon name="time-outline" class="mr-2 text-lg"></ion-icon>
+              <span>5 min de lectura</span>
+            </div>
+          </div>
+        </header>
+
+        <div class="rounded-2xl overflow-hidden shadow-lg mb-10 h-64 md:h-96 w-full">
+          <img
+            src="https://images.pexels.com/photos/1181675/pexels-photo-1181675.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
+            alt="Mujeres aprendiendo computación" class="w-full h-full object-cover" />
+        </div>
+
+        <div class="prose max-w-none text-lg">
+          <p class="lead text-xl text-gray-600 font-medium mb-8">
+            En un esfuerzo continuo por empoderar a nuestras socias, la
+            Asociación de Esposas de Oficiales (ADEOAR) celebró este fin de
+            semana la graduación de 50 participantes del curso intensivo
+            "Tecnología para Emprendedoras".
+          </p>
+
+          <p>
+            La jornada, que se extendió durante cuatro semanas, abarcó temas
+            fundamentales como el manejo de paquetes de oficina, creación de
+            correos corporativos y el uso estratégico de redes sociales para
+            impulsar pequeños negocios. El evento tuvo lugar en el salón
+            principal del Club Naval y contó con la presencia de la directiva.
+          </p>
+
+          <blockquote>
+            "La tecnología no es el futuro, es el presente. Ver a nuestras
+            socias perder el miedo al computador y crear sus propias marcas
+            digitales es el mayor logro de esta gestión." — Presidenta de
+            ADEOAR.
+          </blockquote>
+
+          <h2>Impacto en la comunidad</h2>
+          <p>
+            Muchas de las participantes son dueñas de pequeños emprendimientos
+            de repostería, costura y artesanías. Gracias a este taller, ahora
+            pueden:
+          </p>
+          <ul>
+            <li>Gestionar sus pedidos de manera digital.</li>
+            <li>
+              Diseñar promociones básicas utilizando herramientas gratuitas
+              como Canva.
+            </li>
+            <li>
+              Mantener una comunicación más fluida y profesional con sus
+              clientes.
+            </li>
+          </ul>
+
+          <h3>Próximos pasos</h3>
+          <p>
+            Debido al éxito rotundo y la alta demanda, nos complace anunciar
+            que se abrirá una <strong>segunda convocatoria</strong> para el
+            mes de abril. Las interesadas pueden acercarse a las oficinas
+            administrativas o registrarse a través de nuestro formulario en
+            línea en la sección de
+            <a href="#" class="text-blue-600 hover:underline font-bold">Aula Virtual</a>.
+          </p>
+
+          <p>
+            Agradecemos profundamente a nuestros facilitadores voluntarios y a
+            las empresas patrocinadoras que donaron las tablets sorteadas al
+            final de la ceremonia. ¡Juntas seguimos creciendo!
+          </p>
+        </div>
+
+        <div class="mt-12 pt-6 border-t border-gray-200 flex flex-col md:flex-row justify-between items-center gap-4">
+          <div class="flex flex-wrap gap-2">
+            <span class="text-gray-500 text-sm font-semibold mr-2">Etiquetas:</span>
+            <a href="#"
+              class="bg-gray-100 hover:bg-gray-200 text-gray-600 px-3 py-1 rounded text-sm transition-colors">#Tecnología</a>
+            <a href="#"
+              class="bg-gray-100 hover:bg-gray-200 text-gray-600 px-3 py-1 rounded text-sm transition-colors">#Mujeres</a>
+            <a href="#"
+              class="bg-gray-100 hover:bg-gray-200 text-gray-600 px-3 py-1 rounded text-sm transition-colors">#Capacitación</a>
+          </div>
+
+          <div class="flex items-center space-x-3">
+            <span class="text-gray-500 text-sm font-semibold">Compartir:</span>
+            <button
+              class="w-8 h-8 rounded-full bg-blue-100 text-blue-600 flex items-center justify-center hover:bg-blue-600 hover:text-white transition-all">
+              <ion-icon name="logo-facebook"></ion-icon>
+            </button>
+            <button
+              class="w-8 h-8 rounded-full bg-blue-100 text-blue-400 flex items-center justify-center hover:bg-blue-400 hover:text-white transition-all">
+              <ion-icon name="logo-twitter"></ion-icon>
+            </button>
+            <button
+              class="w-8 h-8 rounded-full bg-green-100 text-green-600 flex items-center justify-center hover:bg-green-600 hover:text-white transition-all">
+              <ion-icon name="logo-whatsapp"></ion-icon>
+            </button>
+          </div>
+        </div>
+
+        <div class="grid grid-cols-2 gap-4 mt-12">
+          <a href="#"
+            class="group border border-gray-200 p-4 rounded-xl hover:border-blue-300 hover:bg-blue-50 transition-all text-left">
+            <span class="text-xs text-gray-400 uppercase font-bold block mb-1 group-hover:text-blue-600">←
+              Anterior</span>
+            <h4 class="font-bold text-gray-700 group-hover:text-blue-900 truncate">
+              Jornada Médica Infantil
+            </h4>
           </a>
-          <a href="#" class="group">
-            <div class="h-48 rounded-xl overflow-hidden mb-4">
-              <img
-                src="https://images.pexels.com/photos/1105666/pexels-photo-1105666.jpeg"
-                class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
-              />
-            </div>
-            <h3
-              class="font-bold text-lg text-gray-800 group-hover:text-blue-900 mb-2"
-            >
-              Jornada de salud femenina
-            </h3>
-            <p class="text-gray-500 text-sm line-clamp-2">
-              Charlas y chequeos preventivos gratuitos para todas nuestras
-              afiliadas...
-            </p>
-          </a>
-          <a href="#" class="group">
-            <div class="h-48 rounded-xl overflow-hidden mb-4">
-              <img
-                src="https://images.pexels.com/photos/8613089/pexels-photo-8613089.jpeg"
-                class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
-              />
-            </div>
-            <h3
-              class="font-bold text-lg text-gray-800 group-hover:text-blue-900 mb-2"
-            >
-              Planificación financiera
-            </h3>
-            <p class="text-gray-500 text-sm line-clamp-2">
-              Consejos prácticos para manejar las finanzas del hogar y del
-              negocio...
-            </p>
+          <a href="#"
+            class="group border border-gray-200 p-4 rounded-xl hover:border-blue-300 hover:bg-blue-50 transition-all text-right">
+            <span class="text-xs text-gray-400 uppercase font-bold block mb-1 group-hover:text-blue-600">Siguiente
+              →</span>
+            <h4 class="font-bold text-gray-700 group-hover:text-blue-900 truncate">
+              Donación de Útiles Escolares
+            </h4>
           </a>
         </div>
-      </div>
-    </main>
+      </article>
 
-    <footer class="bg-blue-900 text-white mt-10">
-      <div class="px-4 py-8 mx-auto text-center">
-        <p class="text-sm opacity-70">
-          © 2024 Asociación de Esposas de Oficiales, ARD. Todos los derechos
-          reservados.
-        </p>
-      </div>
-    </footer>
+      <aside class="lg:w-1/3 space-y-8">
+        <div class="bg-white p-6 rounded-2xl shadow-sm border border-gray-100">
+          <h3 class="text-lg font-bold text-gray-800 mb-4">Buscar</h3>
+          <div class="relative">
+            <input type="text" placeholder="Escribe aquí..."
+              class="w-full pl-4 pr-10 py-3 rounded-lg bg-gray-50 border border-gray-200 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:bg-white transition-all" />
+            <button class="absolute right-3 top-1/2 -translate-y-1/2 text-gray-400 hover:text-blue-600">
+              <ion-icon name="search-outline" class="text-xl"></ion-icon>
+            </button>
+          </div>
+        </div>
 
-    <script>
-      document.addEventListener("DOMContentLoaded", () => {
-        const button = document.getElementById("mobile-menu-button");
-        const menu = document.getElementById("mobile-menu");
-        button.addEventListener("click", () => {
-          menu.classList.toggle("hidden");
-        });
+        <div class="bg-white p-6 rounded-2xl shadow-sm border border-gray-100">
+          <h3 class="text-lg font-bold text-gray-800 mb-4 border-l-4 border-red-600 pl-3">
+            Categorías
+          </h3>
+          <ul class="space-y-2">
+            <li>
+              <a href="#"
+                class="flex justify-between items-center text-gray-600 hover:text-blue-900 hover:bg-gray-50 p-2 rounded transition-colors group">
+                <span>Actividades Sociales</span>
+                <span
+                  class="bg-gray-100 text-gray-500 text-xs px-2 py-1 rounded-full group-hover:bg-blue-100 group-hover:text-blue-700">12</span>
+              </a>
+            </li>
+            <li>
+              <a href="#"
+                class="flex justify-between items-center text-gray-600 hover:text-blue-900 hover:bg-gray-50 p-2 rounded transition-colors group">
+                <span>Educación & Talleres</span>
+                <span
+                  class="bg-gray-100 text-gray-500 text-xs px-2 py-1 rounded-full group-hover:bg-blue-100 group-hover:text-blue-700">8</span>
+              </a>
+            </li>
+            <li>
+              <a href="#"
+                class="flex justify-between items-center text-gray-600 hover:text-blue-900 hover:bg-gray-50 p-2 rounded transition-colors group">
+                <span>Acción Cívica</span>
+                <span
+                  class="bg-gray-100 text-gray-500 text-xs px-2 py-1 rounded-full group-hover:bg-blue-100 group-hover:text-blue-700">5</span>
+              </a>
+            </li>
+            <li>
+              <a href="#"
+                class="flex justify-between items-center text-gray-600 hover:text-blue-900 hover:bg-gray-50 p-2 rounded transition-colors group">
+                <span>Salud</span>
+                <span
+                  class="bg-gray-100 text-gray-500 text-xs px-2 py-1 rounded-full group-hover:bg-blue-100 group-hover:text-blue-700">3</span>
+              </a>
+            </li>
+          </ul>
+        </div>
+
+        <div class="bg-white p-6 rounded-2xl shadow-sm border border-gray-100">
+          <h3 class="text-lg font-bold text-gray-800 mb-6 border-l-4 border-teal-500 pl-3">
+            Lo más reciente
+          </h3>
+
+          <div class="space-y-6">
+            <a href="#" class="flex gap-4 group">
+              <div class="w-20 h-20 rounded-lg overflow-hidden flex-shrink-0">
+                <img src="https://images.pexels.com/photos/3760323/pexels-photo-3760323.jpeg"
+                  class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500" />
+              </div>
+              <div>
+                <h4
+                  class="font-bold text-gray-800 text-sm leading-snug mb-1 group-hover:text-blue-700 transition-colors">
+                  Encuentro de confraternidad anual 2024
+                </h4>
+                <span class="text-xs text-gray-400">15 Ene, 2024</span>
+              </div>
+            </a>
+
+            <a href="#" class="flex gap-4 group">
+              <div class="w-20 h-20 rounded-lg overflow-hidden flex-shrink-0">
+                <img src="https://images.pexels.com/photos/6646917/pexels-photo-6646917.jpeg"
+                  class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500" />
+              </div>
+              <div>
+                <h4
+                  class="font-bold text-gray-800 text-sm leading-snug mb-1 group-hover:text-blue-700 transition-colors">
+                  Entrega de juguetes en comunidades
+                </h4>
+                <span class="text-xs text-gray-400">05 Dic, 2023</span>
+              </div>
+            </a>
+
+            <a href="#" class="flex gap-4 group">
+              <div class="w-20 h-20 rounded-lg overflow-hidden flex-shrink-0">
+                <img src="https://images.pexels.com/photos/1181438/pexels-photo-1181438.jpeg"
+                  class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" />
+              </div>
+              <div>
+                <h4
+                  class="font-bold text-gray-800 text-sm leading-snug mb-1 group-hover:text-blue-700 transition-colors">
+                  Asamblea general ordinaria
+                </h4>
+                <span class="text-xs text-gray-400">28 Nov, 2023</span>
+              </div>
+            </a>
+          </div>
+        </div>
+
+        <div class="relative rounded-2xl overflow-hidden text-center text-white py-10 px-6">
+          <div class="absolute inset-0 bg-blue-900 opacity-90 z-10"></div>
+          <img src="https://images.pexels.com/photos/296282/pexels-photo-296282.jpeg"
+            class="absolute inset-0 w-full h-full object-cover" />
+
+          <div class="relative z-20">
+            <h3 class="text-2xl font-bold font-serif-display mb-2">
+              ¡Apoya nuestra causa!
+            </h3>
+            <p class="text-sm text-blue-100 mb-6">
+              Tu donación hace posible estos talleres.
+            </p>
+            <button
+              class="bg-red-600 hover:bg-red-700 text-white font-bold py-2 px-6 rounded-full shadow-lg transition-transform hover:-translate-y-1">
+              Donar Ahora
+            </button>
+          </div>
+        </div>
+      </aside>
+    </div>
+
+    <div class="mt-20 pt-10 border-t border-gray-200">
+      <h2 class="text-2xl font-bold text-gray-800 mb-8">
+        También te podría interesar
+      </h2>
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+        <a href="#" class="group">
+          <div class="h-48 rounded-xl overflow-hidden mb-4">
+            <img src="https://images.pexels.com/photos/769289/pexels-photo-769289.jpeg"
+              class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" />
+          </div>
+          <h3 class="font-bold text-lg text-gray-800 group-hover:text-blue-900 mb-2">
+            Curso de repostería avanzada
+          </h3>
+          <p class="text-gray-500 text-sm line-clamp-2">
+            Aprende nuevas técnicas y recetas en nuestro próximo ciclo de
+            talleres...
+          </p>
+        </a>
+        <a href="#" class="group">
+          <div class="h-48 rounded-xl overflow-hidden mb-4">
+            <img src="https://images.pexels.com/photos/1105666/pexels-photo-1105666.jpeg"
+              class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" />
+          </div>
+          <h3 class="font-bold text-lg text-gray-800 group-hover:text-blue-900 mb-2">
+            Jornada de salud femenina
+          </h3>
+          <p class="text-gray-500 text-sm line-clamp-2">
+            Charlas y chequeos preventivos gratuitos para todas nuestras
+            afiliadas...
+          </p>
+        </a>
+        <a href="#" class="group">
+          <div class="h-48 rounded-xl overflow-hidden mb-4">
+            <img src="https://images.pexels.com/photos/8613089/pexels-photo-8613089.jpeg"
+              class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" />
+          </div>
+          <h3 class="font-bold text-lg text-gray-800 group-hover:text-blue-900 mb-2">
+            Planificación financiera
+          </h3>
+          <p class="text-gray-500 text-sm line-clamp-2">
+            Consejos prácticos para manejar las finanzas del hogar y del
+            negocio...
+          </p>
+        </a>
+      </div>
+    </div>
+  </main>
+
+  <footer class="bg-blue-900 text-white mt-10">
+    <div class="px-4 py-8 mx-auto text-center">
+      <p class="text-sm opacity-70">
+        © 2024 Asociación de Esposas de Oficiales, ARD. Todos los derechos
+        reservados.
+      </p>
+    </div>
+  </footer>
+
+  <script>
+    document.addEventListener("DOMContentLoaded", () => {
+      const button = document.getElementById("mobile-menu-button");
+      const menu = document.getElementById("mobile-menu");
+      button.addEventListener("click", () => {
+        menu.classList.toggle("hidden");
       });
-    </script>
-  </body>
+    });
+  </script>
+</body>
+
 </html>
