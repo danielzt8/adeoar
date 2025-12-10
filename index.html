@@ -1052,91 +1052,95 @@
             </div>
         </section>
 
+        <!-- seccion de patrocinadores -->
+        <section class="py-20 bg-white reveal" x-data="{
+        offset: 0,
+        logos: [
+            { name: 'GitHub', color: 'group-hover:text-[#181717]', svg: 'M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z' },
+            { name: 'Stripe', color: 'group-hover:text-[#635BFF]', svg: 'M13.976 9.15c-2.172-.806-3.356-1.426-3.356-2.915 0-1.172 1.05-1.65 2.39-1.65 1.86 0 3.5.577 4.978 1.316l.837-3.414c-1.577-.667-3.523-1.086-5.576-1.086-4.966 0-7.856 2.56-7.856 6.868 0 3.104 2.098 5.191 6.226 6.659 2.617.93 3.738 1.615 3.738 2.966 0 1.13-1.047 1.827-2.69 1.827-2.235 0-4.201-.807-6.03-1.798l-.945 3.668c1.87.93 3.963 1.383 6.268 1.383 5.538 0 8.364-2.69 8.364-7.188 0-3.708-2.357-5.353-6.348-6.636z' },
+            { name: 'Reddit', color: 'group-hover:text-[#FF4500]', svg: 'M12 0A12 12 0 0 0 0 12a12 12 0 0 0 12 12 12 12 0 0 0 12-12A12 12 0 0 0 12 0zm5.01 4.744c.688 0 1.25.561 1.25 1.249a1.25 1.25 0 0 1-2.498.056l-2.597-.547-.8 3.747c1.824.07 3.48.632 4.674 1.488.308-.309.73-.491 1.207-.491.968 0 1.754.786 1.754 1.754 0 .716-.435 1.333-1.01 1.614a3.111 3.111 0 0 1 .042.52c0 2.694-3.13 4.87-7.004 4.87-3.874 0-7.004-2.176-7.004-4.87 0-.183.015-.366.043-.534A1.748 1.748 0 0 1 4.028 12c0-.968.786-1.754 1.754-1.754.463 0 .898.196 1.207.49 1.207-.883 2.878-1.43 4.744-1.487l.885-4.182a.342.342 0 0 1 .14-.197.35.35 0 0 1 .238-.042l2.906.617a1.214 1.214 0 0 1 1.108-.701zM9.25 12C8.561 12 8 12.562 8 13.25c0 .687.561 1.248 1.25 1.248.687 0 1.248-.561 1.248-1.249 0-.688-.561-1.249-1.249-1.249zm5.5 0c-.687 0-1.248.561-1.248 1.25 0 .687.561 1.248 1.249 1.248.688 0 1.249-.561 1.249-1.249 0-.687-.562-1.249-1.249-1.249zm-5.466 3.99a.327.327 0 0 0-.231.094.33.33 0 0 0 0 .463c.842.842 2.484.913 2.961.913.477 0 2.105-.056 2.961-.913a.361.361 0 0 0 .029-.463.33.33 0 0 0-.464 0c-.547.533-1.684.73-2.512.73-.828 0-1.979-.196-2.512-.73a.326.326 0 0 0-.232-.095z' },
+            { name: 'Google', color: 'group-hover:text-[#4285F4]', svg: 'M12.48 10.92v3.28h7.84c-.24 1.84-.853 3.187-1.787 4.133-1.147 1.147-2.933 2.4-6.053 2.4-4.827 0-8.6-3.893-8.6-8.72s3.773-8.72 8.6-8.72c2.6 0 4.507 1.027 5.907 2.347l2.307-2.307C18.747 1.44 16.133 0 12.48 0 5.867 0 .307 5.387.307 12s5.56 12 12.173 12c3.573 0 6.267-1.173 8.373-3.36 2.16-2.16 2.84-5.213 2.84-7.667 0-.76-.053-1.467-.173-2.053H12.48z' },
+            { name: 'Spotify', color: 'group-hover:text-[#1DB954]', svg: 'M12 0C5.4 0 0 5.4 0 12s5.4 12 12 12 12-5.4 12-12S18.66 0 12 0zm5.521 17.34c-.24.359-.66.48-1.021.24-2.82-1.74-6.36-2.101-10.561-1.141-.418.122-.837-.118-.96-.537-.118-.418.118-.837.537-.96 4.618-1.08 8.58-.66 11.76 1.321.36.18.48.6.24 1.02zm1.44-3.3c-.301.42-.841.6-1.262.3-3.239-1.98-8.159-2.58-11.939-1.38-.479.12-1.02-.12-1.199-.6-.12-.48.12-1.021.6-1.199 4.379-1.32 9.841-.6 13.5 1.679.42.24.6.841.3 1.262zm.12-3.36C15.18 8.46 8.82 8.16 5.1 9.301c-.6.179-1.2-.181-1.38-.721-.18-.601.18-1.2.72-1.381 4.26-1.26 11.4-1.02 15.66 1.44.539.3.719 1.02.419 1.56-.299.421-1.02.599-1.559.3z' },
+            { name: 'Apple', color: 'group-hover:text-black', svg: 'M12.152 6.896c-.948 0-2.415-1.078-3.96-1.04-2.04.027-3.91 1.183-4.961 3.014-2.117 3.675-.546 9.103 1.519 12.09 1.013 1.454 2.208 3.09 3.792 3.039 1.52-.065 2.09-.987 3.935-.987 1.831 0 2.35.987 3.96.948 1.637-.026 2.676-1.48 3.676-2.948 1.156-1.688 1.636-3.325 1.662-3.415-.039-.013-3.182-1.221-3.22-4.857-.026-3.04 2.48-4.494 2.597-4.559-1.429-2.09-3.623-2.324-4.39-2.376-2-.156-3.675 1.09-4.61 1.09zM15.53 3.83c.843-1.012 1.4-2.427 1.245-3.83-1.207.052-2.662.805-3.532 1.818-.78.896-1.454 2.338-1.273 3.714 1.338.104 2.715-.688 3.559-1.701z' }
+        ],
+        timer: null,
+        start() {
+            this.timer = setInterval(() => {
+                this.offset = this.offset >= (this.logos.length * 200) ? 0 : this.offset + 1;
+            }, 20); // Velocidad del desplazamiento
+        },
+        stop() {
+            clearInterval(this.timer);
+        }
+    }" x-init="start()" @mouseenter="stop()" @mouseleave="start()">
 
-        <section class="py-20 bg-white reveal">
-            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 overflow-hidden">
 
                 <h2 class="text-center text-2xl font-bold text-gray-800 mb-12 uppercase tracking-wider">
                     Patrocinadores Oficiales
                 </h2>
 
-                <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-y-12 gap-x-8 justify-items-center">
+                <div class="relative w-full overflow-hidden whitespace-nowrap py-4">
 
-                    <a href="#"
-                        class="group flex flex-col items-center transition-transform duration-300 hover:scale-105">
-                        <div class="h-12 w-12 text-gray-400 transition-colors duration-300 group-hover:text-[#181717]">
-                            <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 24 24">
-                                <path
-                                    d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z" />
-                            </svg>
-                        </div>
-                        <span
-                            class="mt-3 text-sm font-medium text-gray-500 transition-colors duration-300 group-hover:text-gray-900">GitHub</span>
-                    </a>
+                    <div class="inline-flex items-center" :style="'transform: translateX(-' + offset + 'px)'">
 
-                    <a href="#"
-                        class="group flex flex-col items-center transition-transform duration-300 hover:scale-105">
-                        <div class="h-12 w-12 text-gray-400 transition-colors duration-300 group-hover:text-[#635BFF]">
-                            <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 24 24">
-                                <path
-                                    d="M13.976 9.15c-2.172-.806-3.356-1.426-3.356-2.915 0-1.172 1.05-1.65 2.39-1.65 1.86 0 3.5.577 4.978 1.316l.837-3.414c-1.577-.667-3.523-1.086-5.576-1.086-4.966 0-7.856 2.56-7.856 6.868 0 3.104 2.098 5.191 6.226 6.659 2.617.93 3.738 1.615 3.738 2.966 0 1.13-1.047 1.827-2.69 1.827-2.235 0-4.201-.807-6.03-1.798l-.945 3.668c1.87.93 3.963 1.383 6.268 1.383 5.538 0 8.364-2.69 8.364-7.188 0-3.708-2.357-5.353-6.348-6.636z" />
-                            </svg>
-                        </div>
-                        <span
-                            class="mt-3 text-sm font-medium text-gray-500 transition-colors duration-300 group-hover:text-gray-900">Stripe</span>
-                    </a>
+                        <template x-for="logo in logos">
+                            <div class="w-[200px] inline-flex justify-center flex-shrink-0 mx-8">
+                                <a href="#"
+                                    class="group flex flex-col items-center transition-transform duration-300 hover:scale-105">
+                                    <div class="h-12 w-12 text-gray-400 transition-colors duration-300"
+                                        :class="logo.color">
+                                        <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 24 24">
+                                            <path :d="logo.svg" />
+                                        </svg>
+                                    </div>
+                                    <span
+                                        class="mt-3 text-sm font-medium text-gray-500 transition-colors duration-300 group-hover:text-gray-900"
+                                        x-text="logo.name"></span>
+                                </a>
+                            </div>
+                        </template>
 
-                    <a href="#"
-                        class="group flex flex-col items-center transition-transform duration-300 hover:scale-105">
-                        <div class="h-12 w-12 text-gray-400 transition-colors duration-300 group-hover:text-[#FF4500]">
-                            <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 24 24">
-                                <path
-                                    d="M12 0A12 12 0 0 0 0 12a12 12 0 0 0 12 12 12 12 0 0 0 12-12A12 12 0 0 0 12 0zm5.01 4.744c.688 0 1.25.561 1.25 1.249a1.25 1.25 0 0 1-2.498.056l-2.597-.547-.8 3.747c1.824.07 3.48.632 4.674 1.488.308-.309.73-.491 1.207-.491.968 0 1.754.786 1.754 1.754 0 .716-.435 1.333-1.01 1.614a3.111 3.111 0 0 1 .042.52c0 2.694-3.13 4.87-7.004 4.87-3.874 0-7.004-2.176-7.004-4.87 0-.183.015-.366.043-.534A1.748 1.748 0 0 1 4.028 12c0-.968.786-1.754 1.754-1.754.463 0 .898.196 1.207.49 1.207-.883 2.878-1.43 4.744-1.487l.885-4.182a.342.342 0 0 1 .14-.197.35.35 0 0 1 .238-.042l2.906.617a1.214 1.214 0 0 1 1.108-.701zM9.25 12C8.561 12 8 12.562 8 13.25c0 .687.561 1.248 1.25 1.248.687 0 1.248-.561 1.248-1.249 0-.688-.561-1.249-1.249-1.249zm5.5 0c-.687 0-1.248.561-1.248 1.25 0 .687.561 1.248 1.249 1.248.688 0 1.249-.561 1.249-1.249 0-.687-.562-1.249-1.249-1.249zm-5.466 3.99a.327.327 0 0 0-.231.094.33.33 0 0 0 0 .463c.842.842 2.484.913 2.961.913.477 0 2.105-.056 2.961-.913a.361.361 0 0 0 .029-.463.33.33 0 0 0-.464 0c-.547.533-1.684.73-2.512.73-.828 0-1.979-.196-2.512-.73a.326.326 0 0 0-.232-.095z" />
-                            </svg>
-                        </div>
-                        <span
-                            class="mt-3 text-sm font-medium text-gray-500 transition-colors duration-300 group-hover:text-gray-900">Reddit</span>
-                    </a>
+                        <template x-for="logo in logos">
+                            <div class="w-[200px] inline-flex justify-center flex-shrink-0 mx-8">
+                                <a href="#"
+                                    class="group flex flex-col items-center transition-transform duration-300 hover:scale-105">
+                                    <div class="h-12 w-12 text-gray-400 transition-colors duration-300"
+                                        :class="logo.color">
+                                        <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 24 24">
+                                            <path :d="logo.svg" />
+                                        </svg>
+                                    </div>
+                                    <span
+                                        class="mt-3 text-sm font-medium text-gray-500 transition-colors duration-300 group-hover:text-gray-900"
+                                        x-text="logo.name"></span>
+                                </a>
+                            </div>
+                        </template>
 
-                    <a href="#"
-                        class="group flex flex-col items-center transition-transform duration-300 hover:scale-105">
-                        <div class="h-12 w-12 text-gray-400 transition-colors duration-300 group-hover:text-[#4285F4]">
-                            <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 24 24">
-                                <path
-                                    d="M12.48 10.92v3.28h7.84c-.24 1.84-.853 3.187-1.787 4.133-1.147 1.147-2.933 2.4-6.053 2.4-4.827 0-8.6-3.893-8.6-8.72s3.773-8.72 8.6-8.72c2.6 0 4.507 1.027 5.907 2.347l2.307-2.307C18.747 1.44 16.133 0 12.48 0 5.867 0 .307 5.387.307 12s5.56 12 12.173 12c3.573 0 6.267-1.173 8.373-3.36 2.16-2.16 2.84-5.213 2.84-7.667 0-.76-.053-1.467-.173-2.053H12.48z" />
-                            </svg>
-                        </div>
-                        <span
-                            class="mt-3 text-sm font-medium text-gray-500 transition-colors duration-300 group-hover:text-gray-900">Google</span>
-                    </a>
+                        <template x-for="logo in logos">
+                            <div class="w-[200px] inline-flex justify-center flex-shrink-0 mx-8">
+                                <a href="#"
+                                    class="group flex flex-col items-center transition-transform duration-300 hover:scale-105">
+                                    <div class="h-12 w-12 text-gray-400 transition-colors duration-300"
+                                        :class="logo.color">
+                                        <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 24 24">
+                                            <path :d="logo.svg" />
+                                        </svg>
+                                    </div>
+                                    <span
+                                        class="mt-3 text-sm font-medium text-gray-500 transition-colors duration-300 group-hover:text-gray-900"
+                                        x-text="logo.name"></span>
+                                </a>
+                            </div>
+                        </template>
 
-                    <a href="#"
-                        class="group flex flex-col items-center transition-transform duration-300 hover:scale-105">
-                        <div class="h-12 w-12 text-gray-400 transition-colors duration-300 group-hover:text-[#1DB954]">
-                            <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 24 24">
-                                <path
-                                    d="M12 0C5.4 0 0 5.4 0 12s5.4 12 12 12 12-5.4 12-12S18.66 0 12 0zm5.521 17.34c-.24.359-.66.48-1.021.24-2.82-1.74-6.36-2.101-10.561-1.141-.418.122-.837-.118-.96-.537-.118-.418.118-.837.537-.96 4.618-1.08 8.58-.66 11.76 1.321.36.18.48.6.24 1.02zm1.44-3.3c-.301.42-.841.6-1.262.3-3.239-1.98-8.159-2.58-11.939-1.38-.479.12-1.02-.12-1.199-.6-.12-.48.12-1.021.6-1.199 4.379-1.32 9.841-.6 13.5 1.679.42.24.6.841.3 1.262zm.12-3.36C15.18 8.46 8.82 8.16 5.1 9.301c-.6.179-1.2-.181-1.38-.721-.18-.601.18-1.2.72-1.381 4.26-1.26 11.4-1.02 15.66 1.44.539.3.719 1.02.419 1.56-.299.421-1.02.599-1.559.3z" />
-                            </svg>
-                        </div>
-                        <span
-                            class="mt-3 text-sm font-medium text-gray-500 transition-colors duration-300 group-hover:text-gray-900">Spotify</span>
-                    </a>
-
-                    <a href="#"
-                        class="group flex flex-col items-center transition-transform duration-300 hover:scale-105">
-                        <div class="h-12 w-12 text-gray-400 transition-colors duration-300 group-hover:text-black">
-                            <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 24 24">
-                                <path
-                                    d="M12.152 6.896c-.948 0-2.415-1.078-3.96-1.04-2.04.027-3.91 1.183-4.961 3.014-2.117 3.675-.546 9.103 1.519 12.09 1.013 1.454 2.208 3.09 3.792 3.039 1.52-.065 2.09-.987 3.935-.987 1.831 0 2.35.987 3.96.948 1.637-.026 2.676-1.48 3.676-2.948 1.156-1.688 1.636-3.325 1.662-3.415-.039-.013-3.182-1.221-3.22-4.857-.026-3.04 2.48-4.494 2.597-4.559-1.429-2.09-3.623-2.324-4.39-2.376-2-.156-3.675 1.09-4.61 1.09zM15.53 3.83c.843-1.012 1.4-2.427 1.245-3.83-1.207.052-2.662.805-3.532 1.818-.78.896-1.454 2.338-1.273 3.714 1.338.104 2.715-.688 3.559-1.701z" />
-                            </svg>
-                        </div>
-                        <span
-                            class="mt-3 text-sm font-medium text-gray-500 transition-colors duration-300 group-hover:text-gray-900">Apple</span>
-                    </a>
-
+                    </div>
                 </div>
             </div>
         </section>
+
+        <!-- secccion de patrocinadores -->
 
         <!-- Enlaces de interes -->
         <section class="bg-gray-50 py-16">
@@ -1346,6 +1350,7 @@
                 </div>
             </div>
         </section>
+
 
         <footer class="bg-blue-900 text-white">
             <div class="px-4 pt-16 mx-auto sm:max-w-xl md:max-w-full lg:max-w-screen-xl md:px-24 lg:px-8">
