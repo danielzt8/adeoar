@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Página no encontrada - ADEOAR</title>
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+    <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
+
+    <style>
+        .font-serif-display {
+            font-family: ui-serif, Georgia, Cambria, "Times New Roman", Times, serif;
+        }
+
+        /* Animación suave para el contenido 404 */
+        .fade-in-up {
+            animation: fadeInUp 0.8s ease-out forwards;
+            opacity: 0;
+            transform: translateY(20px);
+        }
+
+        @keyframes fadeInUp {
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+    </style>
+</head>
+
+<body class="bg-gray-50 font-sans flex flex-col min-h-screen">
+
+    <header class="bg-white shadow-sm relative z-50">
+        <div class="container mx-auto px-4 py-4">
+
+            <div class="flex justify-center md:hidden mb-4">
+                <div class="flex flex-col items-center space-y-1">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/2/26/Coat_of_arms_of_the_Dominican_Republic.svg/1200px-Coat_of_arms_of_the_Dominican_Republic.svg.png"
+                        alt="Escudo República Dominicana" class="h-10 w-auto">
+                    <span class="font-serif italic text-gray-700">República Dominicana</span>
+                </div>
+            </div>
+
+            <div class="flex flex-col md:flex-row md:justify-between md:items-center">
+                <div class="flex flex-col items-center md:flex-row md:items-center md:space-x-4">
+                    <img src="data:image/png;base64,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"
+                        alt="Logo Academia Naval" class="h-20 w-auto">
+                    <div class="text-center md:text-left mt-2 md:mt-0">
+                        <h1 class="text-2xl font-bold text-blue-900">Asociación</h1>
+                        <h1 class="text-2xl font-semibold text-blue-900 -mt-2">De Esposas de Oficiales</h1>
+                        <p class="text-sm text-gray-600">Armada de República Dominicana</p>
+                    </div>
+                </div>
+
+                <div class="hidden md:flex flex-col items-end space-y-3">
+                    <div class="flex items-center">
+                        <input type="text" placeholder="Búsqueda"
+                            class="border border-r-0 border-gray-300 px-3 py-1 focus:outline-none focus:ring-1 focus:ring-blue-500">
+                        <button class="bg-blue-800 text-white p-2 hover:bg-blue-900">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 20 20"
+                                fill="currentColor">
+                                <path fill-rule="evenodd"
+                                    d="M8 4a4 4 0 100 8 4 4 0 000-8zM2 8a6 6 0 1110.89 3.476l4.817 4.817a1 1 0 01-1.414 1.414l-4.816-4.816A6 6 0 012 8z"
+                                    clip-rule="evenodd" />
+                            </svg>
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="md:hidden mt-6 border border-gray-300 rounded overflow-hidden flex items-stretch shadow-md">
+                <input type="text" placeholder="Búsqueda" class="flex-grow px-3 py-3 text-lg focus:outline-none"
+                    style="border-radius: 0; border: none;">
+
+                <button id="mobile-menu-button"
+                    class="bg-blue-900 text-white p-3 hover:bg-blue-800 w-16 flex items-center justify-center">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24"
+                        stroke="currentColor" stroke-width="2">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M4 6h16M4 12h16m-7 6h7" />
+                    </svg>
+                </button>
+            </div>
+        </div>
+
+        <nav id="mobile-menu" class="hidden md:hidden bg-blue-800 border-t border-red-600">
+            <ul class="flex flex-col py-2">
+                <li><a href="index.html"
+                        class="block bg-red-600 text-white font-semibold px-4 py-2 hover:bg-red-700">Inicio</a></li>
+                <li><a href="nosotros.html" class="block text-white font-semibold px-4 py-2 hover:bg-blue-700">Sobre
+                        nosotros</a></li>
+                <li><a href="#" class="block text-white font-semibold px-4 py-2 hover:bg-blue-700">Servicios</a></li>
+                <li><a href="#" class="block text-white font-semibold px-4 py-2 hover:bg-blue-700">Transparencia</a>
+                </li>
+                <li><a href="noticias.html"
+                        class="block text-white font-semibold px-4 py-2 hover:bg-blue-700">Noticias</a></li>
+                <li><a href="#" class="block text-white font-semibold px-4 py-2 hover:bg-blue-700">Aula Virtual</a></li>
+                <li><a href="#" class="block text-white font-semibold px-4 py-2 hover:bg-blue-700">Reglamentos</a></li>
+                <li><a href="#" class="block text-white font-semibold px-4 py-2 hover:bg-blue-700">Contactos</a></li>
+            </ul>
+        </nav>
+
+        <nav class="hidden md:block bg-blue-900">
+            <div class="container mx-auto">
+                <ul class="flex">
+                    <li><a href="index.html" class="block bg-red-600 text-white font-semibold px-5 py-3">Inicio</a></li>
+                    <li><a href="nosotros.html"
+                            class="flex items-center space-x-1 text-white font-semibold px-5 py-3 hover:bg-blue-800"><span>Sobre
+                                nosotros</span><svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4"
+                                viewBox="0 0 20 20" fill="currentColor">
+                                <path fill-rule="evenodd"
+                                    d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z"
+                                    clip-rule="evenodd" />
+                            </svg></a></li>
+                    <li><a href="#"
+                            class="flex items-center space-x-1 text-white font-semibold px-5 py-3 hover:bg-blue-800"><span>Servicios</span><svg
+                                xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" viewBox="0 0 20 20"
+                                fill="currentColor">
+                                <path fill-rule="evenodd"
+                                    d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z"
+                                    clip-rule="evenodd" />
+                            </svg></a></li>
+                    <li><a href="#" class="block text-white font-semibold px-5 py-3 hover:bg-blue-800">Transparencia</a>
+                    </li>
+                    <li><a href="noticias.html"
+                            class="block text-white font-semibold px-5 py-3 hover:bg-blue-800">Noticias</a></li>
+                    <li><a href="#" class="block text-white font-semibold px-5 py-3 hover:bg-blue-800">Aula Virtual</a>
+                    </li>
+                    <li><a href="#"
+                            class="flex items-center space-x-1 text-white font-semibold px-5 py-3 hover:bg-blue-800"><span>Reglamentos</span><svg
+                                xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" viewBox="0 0 20 20"
+                                fill="currentColor">
+                                <path fill-rule="evenodd"
+                                    d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z"
+                                    clip-rule="evenodd" />
+                            </svg></a></li>
+                    <li><a href="#" class="block text-white font-semibold px-5 py-3 hover:bg-blue-800">Contactos</a>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+    </header>
+
+    <main class="flex-grow flex items-center justify-center py-20 px-4">
+        <div class="text-center max-w-2xl mx-auto fade-in-up">
+
+            <div class="mb-8 text-blue-900 opacity-20">
+                <ion-icon name="compass-outline" style="font-size: 10rem;"></ion-icon>
+            </div>
+
+            <h1
+                class="text-9xl font-bold font-serif-display text-blue-100 leading-none select-none relative -mt-24 z-0">
+                404
+            </h1>
+
+            <div class="relative z-10 -mt-4">
+                <h2 class="text-3xl md:text-4xl font-bold text-blue-900 mb-4">
+                    ¡Parece que hemos perdido el rumbo!
+                </h2>
+                <p class="text-xl text-gray-600 mb-8">
+                    La página que buscas no se encuentra en nuestras coordenadas actuales. Es posible que haya sido
+                    movida o que la dirección sea incorrecta.
+                </p>
+
+                <div class="flex flex-col sm:flex-row justify-center gap-4">
+                    <a href="index.html"
+                        class="inline-flex items-center justify-center bg-blue-900 text-white font-semibold px-8 py-3 rounded-full hover:bg-blue-800 transition-colors shadow-lg group">
+                        <ion-icon name="home-outline" class="mr-2 text-xl"></ion-icon>
+                        Volver a Puerto Seguro
+                    </a>
+                    <a href="#"
+                        class="inline-flex items-center justify-center bg-white border-2 border-gray-200 text-gray-600 font-semibold px-8 py-3 rounded-full hover:border-blue-900 hover:text-blue-900 transition-all">
+                        <ion-icon name="search-outline" class="mr-2 text-xl"></ion-icon>
+                        Buscar Contenido
+                    </a>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <footer class="bg-blue-900 text-white mt-auto">
+        <div class="px-4 pt-16 mx-auto sm:max-w-xl md:max-w-full lg:max-w-screen-xl md:px-24 lg:px-8">
+            <div class="grid gap-10 row-gap-6 mb-8 sm:grid-cols-2 lg:grid-cols-4">
+                <div class="sm:col-span-2">
+                    <a href="/" aria-label="Go home" title="Company" class="inline-flex items-center">
+                        <svg class="w-8 text-deep-purple-accent-400" viewBox="0 0 24 24" stroke-linejoin="round"
+                            stroke-width="2" stroke-linecap="round" stroke-miterlimit="10" stroke="currentColor"
+                            fill="none">
+                            <rect x="3" y="1" width="7" height="12"></rect>
+                            <rect x="3" y="17" width="7" height="6"></rect>
+                            <rect x="14" y="1" width="7" height="6"></rect>
+                            <rect x="14" y="11" width="7" height="12"></rect>
+                        </svg>
+                        <div class="ml-2">
+                            <h1 class="text-2xl font-semibold">Asociación</h1>
+                            <h1 class="text-lg font-semibold text-white -mt-2">de Esposas de Oficiales, ARD</h1>
+                        </div>
+                    </a>
+                    <div class="mt-6 lg:max-w-sm">
+                        <p class="text-sm text-white">
+                            Comprometidas con el bienestar de la familia naval y el desarrollo de nuestra sociedad.
+                        </p>
+                    </div>
+                </div>
+                <div class="space-y-2 text-sm">
+                    <p class="text-base font-bold tracking-wide text-white">Contactos</p>
+                    <div class="flex">
+                        <p class="mr-1 text-white">Tel:</p>
+                        <a href="tel:850-123-5021" class="transition-colors duration-300 hover:text-gray-300">(809)
+                            593-5900 Ext. 5242</a>
+                    </div>
+                    <div class="flex">
+                        <p class="mr-1 text-white">Email:</p>
+                        <a href="mailto:info@marina.mil.do"
+                            class="transition-colors duration-300 hover:text-gray-300">info@marina.mil.do</a>
+                    </div>
+                    <div class="flex">
+                        <p class="mr-1 text-white">Dirección:</p>
+                        <span class="text-white opacity-80">
+                            Ave. España, Sans Soucí, Santo Domingo Este.
+                        </span>
+                    </div>
+                </div>
+                <div>
+                    <span class="text-base font-bold tracking-wide text-white">Social</span>
+                    <div class="flex items-center mt-1 space-x-3">
+                        <a href="/" class="text-gray-300 transition-colors duration-300 hover:text-white">
+                            <ion-icon name="logo-facebook" class="text-xl"></ion-icon>
+                        </a>
+                        <a href="/" class="text-gray-300 transition-colors duration-300 hover:text-white">
+                            <ion-icon name="logo-instagram" class="text-xl"></ion-icon>
+                        </a>
+                        <a href="/" class="text-gray-300 transition-colors duration-300 hover:text-white">
+                            <ion-icon name="logo-twitter" class="text-xl"></ion-icon>
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <div class="flex flex-col-reverse justify-between pt-5 pb-10 border-t border-blue-800 lg:flex-row">
+                <p class="text-sm text-gray-400">
+                    © 2024 ADEOAR. Todos los derechos reservados.
+                </p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const button = document.getElementById('mobile-menu-button');
+            const menu = document.getElementById('mobile-menu');
+            button.addEventListener('click', () => {
+                menu.classList.toggle('hidden');
+            });
+        });
+    </script>
+</body>
+
+</html>
